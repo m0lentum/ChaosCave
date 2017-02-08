@@ -113,6 +113,7 @@
     </sprites>
     <sprites name="avoidance">
       <sprite>sprites\sprStoneBullet</sprite>
+      <sprite>sprites\sprStoneBulletGlow</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -297,10 +298,13 @@
         <object>objects\atkRainEnd</object>
         <object>objects\atkStutter</object>
         <object>objects\atkCurving</object>
+        <object>objects\objParamController</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>
+        <object>objects\objParamBullet</object>
         <object>objects\objStoneBullet</object>
+        <object>objects\objStoneBulletP</object>
         <object>objects\objRockBreakShot</object>
         <object>objects\objBreakableShot</object>
         <object>objects\objStutterShot</object>
@@ -318,6 +322,7 @@
     <room>rooms\rTemplate</room>
     <room>rooms\rEmpty</room>
     <room>rooms\rAvoidance</room>
+    <room>rooms\rParamTest</room>
     <room>rooms\rLevelSelect</room>
   </rooms>
   <help>

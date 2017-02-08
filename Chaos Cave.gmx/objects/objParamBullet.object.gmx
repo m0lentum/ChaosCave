@@ -2,10 +2,10 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objAttack</parentName>
+  <parentName>objProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set start time
-event_inherited();
-startTime = 1;
-endTime = 10000;
+            <string>///initialize variables
+rootX = 0; //start/center point of the curve
+rootY = 0;
+rotation = 0; //rotation of the curve
+scaleX = 100; //scaling of the curve
+scaleY = 100;
+tSpeed = 0.05; //speed at which to traverse curve
+curveType = 0;
+/*
+* 0 = line
+* 1 = sin(2t), cos(3t)
+*/
+
+t = 0;
+prevX = 0;
+prevY = 0;
 </string>
           </argument>
         </arguments>
@@ -51,25 +63,44 @@ endTime = 10000;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (running)
+            <string>switch (curveType)
 {
-    with (objAVcontroller)
-    {
-        if (timer == 1 || timer == 550)
-        {
-            var nextX = 0;
-            while (nextX &lt; 690)
-            {
-                nextX += random_range(90, 100);
-                var bullet = instance_create(nextX, 0, objStoneBullet);
-                bullet.direction = random_range(265, 275);
-                bullet.speed = random_range(6, 9);
-                bullet.glowAlpha = random_range(0.3, 0.5);
-                bullet.blendColor = $3030ee;
-            }
-        }
-    }
+    case 0: //line at 45 degree angle
+        x = t;
+        y = t;
+        break;
+    case 1: //circle
+        x = cos(t);
+        y = sin(t);
+        break;
+    case 2: //squiggle
+        x = sin(2*t);
+        y = cos(3*t);
+        break;
+    default:
+        x = 0;
+        y = 0;
+        break;
 }
+//scale position
+x *= scaleX;
+y *= scaleY;
+//rotate position around origin
+var newX = x*cos(rotation) - y*sin(rotation);
+var newY = x*sin(rotation) + y*cos(rotation);
+x = newX;
+y = newY;
+//translate position
+x += rootX;
+y += rootY;
+    
+//rotate image to face movement direction
+image_angle = point_direction(prevX, prevY, x, y);
+    
+//increment the parameter and update previous position
+t += tSpeed;
+prevX = x;
+prevY = y;
 </string>
           </argument>
         </arguments>
