@@ -158,6 +158,7 @@
         <script>scripts\scrButtonCheckPressed.gml</script>
         <script>scripts\scrButtonCheckReleased.gml</script>
       </scripts>
+      <script>scripts\scrInitParticleSystem.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrDrawTextOutline.gml</script>

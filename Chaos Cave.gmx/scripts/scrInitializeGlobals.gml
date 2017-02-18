@@ -2,6 +2,8 @@
 
 scrSetGlobalOptions();       //initialize global game options
 
+scrInitParticleSystem();
+
 global.savenum = 1;
 global.difficulty = 0;  //0 = medium, 1 = hard, 2 = very hard, 3 = impossible
 global.death = 0;

@@ -30,7 +30,7 @@ timer = 0;
 
 with (objPlayer) infjump = true;
 
-//global.noDeath = true;
+global.noDeath = true;
 global.testTime = 2200;
 
 scrToggleMusic();
