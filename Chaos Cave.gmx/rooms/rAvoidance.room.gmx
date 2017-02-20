@@ -67,6 +67,7 @@
     <instance objName="objBigRock" x="400" y="303" name="inst_E8EF39FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkStutter" x="96" y="352" name="inst_5DB6BD7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkCurving" x="128" y="352" name="inst_67EF4FE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCrackController" x="96" y="32" name="inst_05273E36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bBlocks" x="32" y="576" w="32" h="32" xo="96" yo="32" id="10003153" name="inst_201F2F84" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

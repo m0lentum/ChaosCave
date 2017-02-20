@@ -115,6 +115,9 @@
       <sprite>sprites\sprStoneBullet</sprite>
       <sprite>sprites\sprStoneBulletGlow</sprite>
     </sprites>
+    <sprites name="background">
+      <sprite>sprites\sprCrack01</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bBlocks</background>
@@ -159,6 +162,7 @@
         <script>scripts\scrButtonCheckReleased.gml</script>
       </scripts>
       <script>scripts\scrInitParticleSystem.gml</script>
+      <script>scripts\scrSpawnCrack.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrDrawTextOutline.gml</script>
@@ -311,6 +315,10 @@
         <object>objects\objStutterShot</object>
         <object>objects\objBigRock</object>
       </objects>
+    </objects>
+    <objects name="background">
+      <object>objects\objCrack</object>
+      <object>objects\objCrackController</object>
     </objects>
   </objects>
   <rooms name="rooms">
