@@ -296,14 +296,13 @@
     </objects>
     <objects name="avoidance">
       <objects name="controllers">
-        <object>objects\objAttack</object>
         <object>objects\objAVcontroller</object>
+        <object>objects\objAttack</object>
         <object>objects\atkBursts</object>
         <object>objects\atkRain</object>
         <object>objects\atkRainEnd</object>
         <object>objects\atkStutter</object>
         <object>objects\atkCurving</object>
-        <object>objects\objParamController</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>
@@ -331,7 +330,6 @@
     <room>rooms\rTemplate</room>
     <room>rooms\rEmpty</room>
     <room>rooms\rAvoidance</room>
-    <room>rooms\rParamTest</room>
     <room>rooms\rLevelSelect</room>
   </rooms>
   <help>

@@ -3,7 +3,7 @@
   <spriteName>sprCrack01</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>101</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -99,7 +99,7 @@ currentAlpha += fade;
             <kind>1</kind>
             <string>///randomize alpha and draw
 image_alpha = clamp(image_alpha + random_range(-0.05, 0.05), 
-    0.9*currentAlpha, 1.1*currentAlpha);
+    0.93*currentAlpha, 1.07*currentAlpha);
 draw_set_blend_mode(bm_add);
 draw_self();
 draw_set_blend_mode(bm_normal);

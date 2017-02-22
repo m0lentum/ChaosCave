@@ -50,6 +50,11 @@ curveInterval = 1;
           <argument>
             <kind>1</kind>
             <string>image_angle = direction;
+
+if (global.avTimer mod curveInterval == 0)
+{
+    direction += curveAmount;
+}
 </string>
           </argument>
         </arguments>

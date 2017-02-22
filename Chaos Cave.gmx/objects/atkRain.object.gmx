@@ -54,17 +54,16 @@ playerArea = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (running)
+            <string>event_inherited();
+if (running)
 {
-    counter++;
+    if (global.avTimer mod 3 == 0) angle--;
     
-    if (counter mod 3 == 0) angle--;
-    
-    if (counter mod 7 == 0)
+    if (global.avTimer mod 7 == 0)
     {
         var bulletAngle = angle;
         var i = 0;
-        if (counter &gt; 550) i = 1; //make two opposite streams if far enough into attack
+        if (global.avTimer &gt; startTime + 550) i = 1; //make two opposite streams if far enough into attack
         for (; i &gt;= 0; i--)
         {
             var bullet = instance_create(0, 0, objRockBreakShot);
@@ -79,7 +78,7 @@ playerArea = 100;
             //shift bullet to the side a random amount
             var randDist = 0;
             //at specific intervals, shoot a bullet near the player
-            if (counter mod 28 == 0) randDist = random_range(-playerArea, playerArea);
+            if (global.avTimer mod 28 == 0) randDist = random_range(-playerArea, playerArea);
             else
             {
                 //make sure bullet isn't too close to player if we don't want it to

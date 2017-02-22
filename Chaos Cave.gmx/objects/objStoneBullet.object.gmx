@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 blendColor = $366af0;
-glowAlpha = 0.5;
+glowAlpha = 0.3;
 
 //particle stuff
 pBaseColor = $366af0;

@@ -1,9 +1,8 @@
 time = argument0;
 
-with(objAVcontroller)
-{
-    timer = other.time;
-}
+if(!instance_exists(objAVcontroller)) exit;
+
+global.avTimer = time;
 
 if (time > 1100) with (objBigRock) { image_xscale = 1; image_yscale = 1; }
 
@@ -15,7 +14,6 @@ with(objAttack)
     else if (startTime <= other.time)
     {
         running = true;
-        counter = other.time - startTime;
     }
     else
     {

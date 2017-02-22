@@ -1,4 +1,5 @@
-global.particleSystem = part_system_create(); //create particle system for displaying sparks
+//create particle system for displaying sparks
+global.particleSystem = part_system_create();
 global.pSpark = part_type_create();
 part_type_speed(global.pSpark, 0, 1, 0, 0.5);
 part_type_direction(global.pSpark, 0, 359, 0, 3);

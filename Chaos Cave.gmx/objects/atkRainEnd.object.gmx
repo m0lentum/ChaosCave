@@ -54,10 +54,10 @@ targetY = room_height / 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (running)
+            <string>event_inherited();
+if (running)
 {
-    counter++;
-    
+    counter = global.avTimer - startTime;
     //destroy bullets outside room on the first frame
     if (counter == 1) with (objRockBreakShot)
     {
@@ -77,7 +77,7 @@ targetY = room_height / 2;
     
     if (counter &lt; 50)
     {
-        if (counter mod 2 == 0) with (objRockBreakShot) speed *= 0.8;
+        if (counter mod 2 == 1) with (objRockBreakShot) speed *= 0.8;
     }
     else if (counter &lt; 70)
     {

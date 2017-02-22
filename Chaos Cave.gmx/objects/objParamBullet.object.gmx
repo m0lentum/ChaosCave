@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///initialize variables
+event_inherited();
 rootX = 0; //start/center point of the curve
 rootY = 0;
 rotation = 0; //rotation of the curve
@@ -39,8 +40,11 @@ curveType = 0;
 */
 
 t = 0;
+endT = -1;
+curving = true;
 prevX = 0;
 prevY = 0;
+realSpeed = 0;
 </string>
           </argument>
         </arguments>
@@ -63,44 +67,55 @@ prevY = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (curveType)
+            <string>event_inherited();
+if (curving)
 {
-    case 0: //line at 45 degree angle
-        x = t;
-        y = t;
-        break;
-    case 1: //circle
-        x = cos(t);
-        y = sin(t);
-        break;
-    case 2: //squiggle
-        x = sin(2*t);
-        y = cos(3*t);
-        break;
-    default:
-        x = 0;
-        y = 0;
-        break;
+    switch (curveType)
+    {
+        case 0: //line at 45 degree angle
+            x = t;
+            y = t;
+            break;
+        case 1: //circle
+            x = cos(t);
+            y = sin(t);
+            break;
+        case 2: //spiral
+            x = t*cos(t);
+            y = t*sin(t);
+            break;
+        default:
+            x = 0;
+            y = 0;
+            break;
+    }
+    //scale position
+    x *= scaleX;
+    y *= scaleY;
+    //rotate position around origin
+    var newX = x*cos(rotation) - y*sin(rotation);
+    var newY = x*sin(rotation) + y*cos(rotation);
+    x = newX;
+    y = newY;
+    //translate position
+    x += rootX;
+    y += rootY;
+        
+    //rotate image to face movement direction
+    image_angle = point_direction(prevX, prevY, x, y);
+        
+    //increment the parameter, update speed and previous position
+    t += tSpeed;
+    realSpeed = point_distance(prevX, prevY, x, y);
+    if (t &gt; endT)
+    {
+        //if end of curve has been reached, start going straight like a normal bullet
+        speed = realSpeed;
+        curving = false;
+    }
+    prevX = x;
+    prevY = y;
 }
-//scale position
-x *= scaleX;
-y *= scaleY;
-//rotate position around origin
-var newX = x*cos(rotation) - y*sin(rotation);
-var newY = x*sin(rotation) + y*cos(rotation);
-x = newX;
-y = newY;
-//translate position
-x += rootX;
-y += rootY;
-    
-//rotate image to face movement direction
-image_angle = point_direction(prevX, prevY, x, y);
-    
-//increment the parameter and update previous position
-t += tSpeed;
-prevX = x;
-prevY = y;
 </string>
           </argument>
         </arguments>

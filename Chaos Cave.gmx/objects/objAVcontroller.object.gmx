@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///reset vars and start music
-timer = 0;
+global.avTimer = 0;
 
 with (objPlayer) infjump = true;
 
@@ -63,7 +63,7 @@ with (objBigRock)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>timer++;
+            <string>global.avTimer++;
 
 //if player is dead, kill all attacks
 if (!instance_exists(objPlayer))
@@ -74,22 +74,13 @@ if (!instance_exists(objPlayer))
 
 with (objAttack)
 {
-    if (other.timer == startTime)
+    if (global.avTimer == startTime)
     {
         running = true;
     }
-    else if (other.timer == endTime)
+    else if (global.avTimer == endTime)
     {
         instance_destroy();
-    }
-}
-
-//make projectiles curve
-with (objProjectile)
-{
-    if (other.timer mod curveInterval == 0)
-    {
-        direction += curveAmount;
     }
 }
 </string>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///initialize vars
 event_inherited();
-startTime = 2445;
+startTime = 2480;
 endTime = 3000;
 
 playerArea = 20;
@@ -59,10 +59,9 @@ curveInterval = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (running)
-{
-    counter++;
-    
+            <string>event_inherited();
+if (running)
+{    
     if (!instance_exists(objBigRock)) exit; //make sure the big rock exists so we don't crash
     
     //spawn a shot
