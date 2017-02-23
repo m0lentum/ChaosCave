@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>///parametric curve version of stone bullet
+event_inherited();
 blendColor = $366af0;
 glowAlpha = 0.3;
 
@@ -92,7 +93,7 @@ if (realSpeed != 0 &amp;&amp; irandom(30 / realSpeed) == 0)
 draw_self();
 draw_set_blend_mode(bm_add);
 draw_sprite_ext(sprStoneBulletGlow, 0, x, y, image_xscale, image_yscale,
-    direction, blendColor, random_range(glowAlpha - 0.1, glowAlpha + 0.1));
+    image_angle, blendColor, random_range(glowAlpha - 0.1, glowAlpha + 0.1));
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>

@@ -62,14 +62,12 @@ curve = 2;
             <string>event_inherited();
 if (running)
 {
-    if (!instance_exists(objBigRock)) exit; //make sure the big rock exists so we don't crash
-    
     if (counter &gt; 1090)
     {
         /*var angle = random(14);
         while (angle &lt; 360)
         {
-            var bullet = instance_create(objBigRock.x, objBigRock.y, objStoneBullet);
+            var bullet = instance_create(room_width/2, room_height/2, objStoneBullet);
             bullet.direction = angle;
             bullet.speed = 5;
                 
@@ -104,8 +102,8 @@ if (running)
         //spawn a shot
         if (counter mod shotInterval == 0)
         {
-            var bullet = instance_create(objBigRock.x, objBigRock.y, objStutterShot);
-            var playerDir = point_direction(objBigRock.x, objBigRock.y, objPlayer.x, objPlayer.y);
+            var bullet = instance_create(room_width/2, room_height/2, objStutterShot);
+            var playerDir = point_direction(room_width/2, room_height/2, objPlayer.x, objPlayer.y);
             if (counter mod (shotInterval*atPlayerInterval) == 0)
             {
                 bullet.direction = random_range(playerDir - playerArea, playerDir + playerArea);

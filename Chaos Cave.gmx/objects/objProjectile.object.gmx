@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>curveAmount = 0;
+            <string>///base class for projectiles
+curveAmount = 0;
 curveInterval = 1;
 </string>
           </argument>

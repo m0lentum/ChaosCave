@@ -61,7 +61,7 @@ if (running)
     //destroy bullets outside room on the first frame
     if (counter == 1) with (objRockBreakShot)
     {
-        if (!(x &gt; 0 &amp;&amp; x &lt; room_width &amp;&amp; y &gt; 0 &amp;&amp; y &lt; room_height)) instance_destroy();
+        if (x &lt; 10 || x &gt; room_width - 10 || y &lt; 10 || y &gt; room_height + 10) instance_destroy();
     }
     
     //big rock grows in the middle

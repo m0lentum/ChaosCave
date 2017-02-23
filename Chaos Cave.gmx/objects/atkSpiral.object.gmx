@@ -27,16 +27,13 @@
             <kind>1</kind>
             <string>///initialize vars
 event_inherited();
-startTime = 2480;
+startTime = 2465;
 endTime = 3000;
 
-playerArea = 20;
-clearZone = 5;
-bulletSpeed = 7;
-shotInterval = 3;
-atPlayerInterval = 8;
-curve = 1.5;
-curveInterval = 1;
+bulletSpeed = 0.03;
+shotInterval = 5;
+spiralSize = 150;
+currentAngle = 0; //direction of the last shot fired
 </string>
           </argument>
         </arguments>
@@ -62,23 +59,20 @@ curveInterval = 1;
             <string>event_inherited();
 if (running)
 {    
-    if (!instance_exists(objBigRock)) exit; //make sure the big rock exists so we don't crash
-    
     //spawn a shot
     if (counter mod shotInterval == 0)
     {
-        var bullet = instance_create(objBigRock.x, objBigRock.y, objStoneBullet);
-        /*var playerDir = point_direction(objBigRock.x, objBigRock.y, objPlayer.x, objPlayer.y);
-        if (counter mod (shotInterval*atPlayerInterval) == 0)
-        {
-            bullet.direction = random_range(playerDir - playerArea, playerDir + playerArea);
-        }
-        else bullet.direction = random_range(playerDir + playerArea + clearZone, (playerDir - playerArea - clearZone) + 360);*/
-        bullet.direction = random(359);
+        currentAngle += random_range(10, 15);
         
-        bullet.curveAmount = curve;
-        bullet.curveInterval = curveInterval;
-        bullet.speed = bulletSpeed;
+        var bullet = instance_create(0, 0, objStoneBulletP);
+        bullet.curveType = 2; //spiral trajectory
+        bullet.rootX = room_width/2;
+        bullet.rootY = room_height/2;
+        bullet.scaleX = spiralSize;
+        bullet.scaleY = spiralSize;
+        bullet.rotation = currentAngle;
+        if (counter &lt; 265) bullet.tSpeed = -bulletSpeed;
+        else bullet.tSpeed = bulletSpeed;
     }
 }
 </string>
