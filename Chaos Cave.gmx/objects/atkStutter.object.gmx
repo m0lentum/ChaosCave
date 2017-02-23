@@ -64,7 +64,7 @@ if (running)
 {
     if (!instance_exists(objBigRock)) exit; //make sure the big rock exists so we don't crash
     
-    if (counter &gt; 1090 &amp;&amp; counter &lt; 1200)
+    if (counter &gt; 1090)
     {
         /*var angle = random(14);
         while (angle &lt; 360)
@@ -81,8 +81,11 @@ if (running)
             var burstTime = 1189;
             if (other.counter == 1091)
             {
-                //curveAmount = (360 - point_direction(room_width/2, room_width/2, x, y) + direction)/(burstTime-1091);
-                curveAmount = 360/(burstTime-1091);
+                /*calculate the amount the bullet needs to turn to end up going directly
+                 *away from the center at the end of the rotation*/
+                var angle = angle_difference(direction, point_direction(room_width/2, room_height/2, x, y));
+                var sgn = sign(angle); if (sgn == 0) sgn = 1;
+                curveAmount = sgn*(360 - abs(angle))/(burstTime-1091);
             }
             else if (other.counter &lt; burstTime)
             {
@@ -90,48 +93,11 @@ if (running)
             }
             else if (other.counter == burstTime)
             {
-                //direction = point_direction(x, y, room_width/2, room_height/2);
+                direction = point_direction(room_width/2, room_height/2, x, y);
                 curveAmount = 0;
             }
-            else speed *= 1.25;
+            else speed *= 1.27;
         }
-    }
-    if (counter &gt; 1090) //end slowdown
-    {
-        /*if (counter &lt; 1130)
-        {
-            with (objStutterShot)
-            {
-                speed *= 0.95;
-            }
-        }
-        else if (counter == 1130)
-        {
-            with (objStutterShot) speed = 0;
-        }
-        else if (counter == 1200) //shatter bullets
-        {
-            var numShots = 3;
-            with (objStutterShot)
-            {
-                //if outside room or too far in the walls, destroy right away, otherwise burst into smaller bullets
-                if (x &gt; 16 &amp;&amp; x &lt; (room_width - 16) &amp;&amp; y &gt; 16 &amp;&amp; y &lt; (room_height - 16))
-                {
-                    var angle = 0;
-                    for (var i = 0; i &lt; numShots; i++)
-                    {
-                        var bullet = instance_create(x, y, objStoneBullet);
-                        bullet.image_xscale = 0.5;
-                        bullet.image_yscale = 0.5;
-                
-                        angle += random_range((360 - angle)/((numShots - i)*3), (360 - angle)/(numShots - i));
-                        bullet.direction = angle;
-                        bullet.speed = 5;
-                    }
-                }
-                instance_destroy();
-            }
-        }*/
     }
     else
     {
