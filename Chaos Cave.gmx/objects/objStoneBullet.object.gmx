@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///normal everyday bullet
 event_inherited();
-blendColor = $366af0;
+blendColor = merge_color($366af0, $3030ee, random(1));
 glowAlpha = 0.3;
 
 //particle stuff

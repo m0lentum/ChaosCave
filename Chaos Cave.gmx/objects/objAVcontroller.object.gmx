@@ -30,8 +30,7 @@ global.avTimer = 0;
 
 with (objPlayer) infjump = true;
 
-global.noDeath = true;
-global.testTime = 2200;
+global.testTime = 2400;
 
 scrToggleMusic();
 scrToggleMusic();

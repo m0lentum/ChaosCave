@@ -72,8 +72,6 @@ if (running)
             bullet.y = objPlayer.y;
             var angleRad = degtorad(-bulletAngle);
             var angleRight = angleRad + (pi / 2);
-            
-            bullet.blendColor = make_color_rgb(irandom(255),irandom(255),irandom(255));
     
             //shift bullet to the side a random amount
             var randDist = 0;

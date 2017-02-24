@@ -48,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>timer++;
+            <string>///spawn cracks
+timer++;
 
 if (timer mod 150 == 1) 
 {
