@@ -32,15 +32,15 @@ endTime = 3500;
 
 numStreams = 3;
 
-minBSpeed = 4;
-maxBSpeed = 8;
-shotInterval = 2;
+minBSpeed = 3;
+maxBSpeed = 7;
+shotInterval = 3;
 
 rotation = 0; //the direction the center of the spray is aimed at
 rotAmount = -2; //the number of degrees to rotate per frame
 
 currentOffset = -15; //the amount of positional offset from the center for the next bullet
-offsetIncrement = 2; //the amount to increase the offset by per shot
+offsetIncrement = 3; //the amount to increase the offset by per shot
 maxOffset = 15;
 </string>
           </argument>
@@ -73,9 +73,7 @@ if (running)
         with(objPlayer) other.rotation = point_direction(room_width/2, room_height/2, x, y) + (180/other.numStreams);
     }
 
-    if (counter &lt; 50) maxBSpeed = 6; //slower shooting at the start
-    else if (counter == 50) maxBSpeed = 8;
-    else
+    if (counter &gt; 50)
     {
         //rotate spray
         rotation += rotAmount;
