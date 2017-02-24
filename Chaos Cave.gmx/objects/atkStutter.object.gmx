@@ -30,9 +30,9 @@ event_inherited();
 startTime = 1240;
 endTime = 2441;
 
-playerArea = 20;
-clearZone = 5;
-moving = true;
+playerArea = 20; //area around player (in degrees) that gets separate rng
+clearZone = 5; //gap around the player area to prevent crappy rng at the edge
+moving = true; //are bullets moving or turning
 bulletSpeed = 7;
 shotInterval = 3;
 atPlayerInterval = 8;
@@ -62,18 +62,8 @@ curve = 2;
             <string>event_inherited();
 if (running)
 {
-    if (counter &gt; 1090)
+    if (counter &gt; 1090) // slowdown and burst at the end
     {
-        /*var angle = random(14);
-        while (angle &lt; 360)
-        {
-            var bullet = instance_create(room_width/2, room_height/2, objStoneBullet);
-            bullet.direction = angle;
-            bullet.speed = 5;
-                
-            angle += 15;
-        }*/
-        
         with (objStoneBullet)
         {
             var burstTime = 1189;
@@ -97,7 +87,7 @@ if (running)
             else speed *= 1.27;
         }
     }
-    else
+    else //most of the attack
     {
         //spawn a shot
         if (counter mod shotInterval == 0)

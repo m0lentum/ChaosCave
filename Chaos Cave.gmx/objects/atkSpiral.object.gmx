@@ -31,9 +31,10 @@ startTime = 2465;
 endTime = 3000;
 
 bulletSpeed = 0.03;
-shotInterval = 5;
+shotInterval = 6;
 spiralSize = 150;
 currentAngle = 0; //direction of the last shot fired
+angleInterval = 15; //amount to shift angle between shots
 </string>
           </argument>
         </arguments>
@@ -62,7 +63,8 @@ if (running)
     //spawn a shot
     if (counter mod shotInterval == 0)
     {
-        currentAngle += random_range(10, 15);
+        var angle = currentAngle + random(angleInterval);
+        currentAngle += angleInterval;
         
         var bullet = instance_create(0, 0, objStoneBulletP);
         bullet.curveType = 2; //spiral trajectory
@@ -70,7 +72,7 @@ if (running)
         bullet.rootY = room_height/2;
         bullet.scaleX = spiralSize;
         bullet.scaleY = spiralSize;
-        bullet.rotation = currentAngle;
+        bullet.rotation = angle;
         if (counter &lt; 265) bullet.tSpeed = -bulletSpeed;
         else bullet.tSpeed = bulletSpeed;
     }

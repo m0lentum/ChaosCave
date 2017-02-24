@@ -5,7 +5,7 @@
   <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objAttack</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,21 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///reset vars and start music
-global.avTimer = 0;
+            <string>///initialize vars
+event_inherited();
+startTime = 3015;
+endTime = 3500;
 
-with (objPlayer) infjump = true;
+numStreams = 3;
 
-global.testTime = 2800;
+minBSpeed = 4;
+maxBSpeed = 8;
+shotInterval = 2;
 
-scrToggleMusic();
-scrToggleMusic();
+rotation = 0; //the direction the center of the spray is aimed at
+rotAmount = -2; //the number of degrees to rotate per frame
 
-with (objBigRock)
-{
-    image_xscale = 0;
-    image_yscale = 0;
-}
+currentOffset = -15; //the amount of positional offset from the center for the next bullet
+offsetIncrement = 2; //the amount to increase the offset by per shot
+maxOffset = 15;
 </string>
           </argument>
         </arguments>
@@ -62,24 +64,40 @@ with (objBigRock)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.avTimer++;
+            <string>event_inherited();
 
-//if player is dead, kill all attacks
-if (!instance_exists(objPlayer))
+if (running)
 {
-    with (objAttack) instance_destroy();
-    instance_destroy();
-}
-
-with (objAttack)
-{
-    if (global.avTimer == startTime)
+    if (counter == 0)
     {
-        running = true;
+        with(objPlayer) other.rotation = point_direction(room_width/2, room_height/2, x, y) + (180/other.numStreams);
     }
-    else if (global.avTimer == endTime)
+
+    if (counter &lt; 50) maxBSpeed = 6; //slower shooting at the start
+    else if (counter == 50) maxBSpeed = 8;
+    else
     {
-        instance_destroy();
+        //rotate spray
+        rotation += rotAmount;
+    }
+    
+    if (counter mod shotInterval == 0)
+    {
+        for (var i = 0; i &lt; numStreams; i++)
+        {
+            //spawn a bullet and apply offsets
+            var angle = rotation + (360/numStreams)*i;
+            var bullet = instance_create(room_width/2, room_height/2, objStoneBullet);
+            var offsetAngle = (angle - 90) mod 360;
+            bullet.x += dcos(offsetAngle)*currentOffset;
+            bullet.y += dsin(offsetAngle)*currentOffset;
+            bullet.direction = angle + currentOffset;
+            bullet.speed = random_range(minBSpeed, maxBSpeed);
+            
+            //update offset
+            if (abs(currentOffset + offsetIncrement) &gt; maxOffset) offsetIncrement = -offsetIncrement;
+            currentOffset += offsetIncrement;
+        }
     }
 }
 </string>

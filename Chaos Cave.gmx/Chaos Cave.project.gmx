@@ -303,6 +303,7 @@
         <object>objects\atkRainEnd</object>
         <object>objects\atkStutter</object>
         <object>objects\atkSpiral</object>
+        <object>objects\atkSpray</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>
