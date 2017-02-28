@@ -28,12 +28,12 @@
             <string>///initialize vars
 event_inherited();
 startTime = 3015;
-endTime = 3500;
+endTime = 3600;
 
 numStreams = 3;
 
 minBSpeed = 3;
-maxBSpeed = 7;
+maxBSpeed = 6;
 shotInterval = 3;
 
 rotation = 0; //the direction the center of the spray is aimed at
@@ -73,6 +73,8 @@ if (running)
         with(objPlayer) other.rotation = point_direction(room_width/2, room_height/2, x, y) + (180/other.numStreams);
     }
 
+    if (counter == 530) rotAmount *= 5; //faster spin at end
+     
     if (counter &gt; 50)
     {
         //rotate spray

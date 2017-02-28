@@ -70,8 +70,8 @@ if (running)
     {
         with (objBigRock)
         {
-            image_xscale += 1 / timeToGrow;
-            image_yscale += 1 / timeToGrow;
+            image_xscale += 2 / timeToGrow;
+            image_yscale += 2 / timeToGrow;
         }
     }
     

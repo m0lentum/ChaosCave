@@ -114,6 +114,9 @@
     <sprites name="avoidance">
       <sprite>sprites\sprStoneBullet</sprite>
       <sprite>sprites\sprStoneBulletGlow</sprite>
+      <sprite>sprites\sprRock</sprite>
+      <sprite>sprites\sprLaser</sprite>
+      <sprite>sprites\sprLaserMask</sprite>
     </sprites>
     <sprites name="background">
       <sprite>sprites\sprCrack01</sprite>
@@ -314,6 +317,7 @@
         <object>objects\objBreakableShot</object>
         <object>objects\objStutterShot</object>
         <object>objects\objBigRock</object>
+        <object>objects\objLaser</object>
       </objects>
     </objects>
     <objects name="background">
