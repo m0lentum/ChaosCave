@@ -138,7 +138,6 @@
       <script>scripts\scrSetPlayerMask.gml</script>
       <script>scripts\scrKillPlayer.gml</script>
       <script>scripts\scrFlipGrav.gml</script>
-      <script>scripts\scrSetAVTime.gml</script>
     </scripts>
     <scripts name="world">
       <script>scripts\scrInitializeGlobals.gml</script>
@@ -171,6 +170,9 @@
       <script>scripts\scrDrawTextOutline.gml</script>
       <script>scripts\scrMakeShapes.gml</script>
       <script>scripts\scrMakeCircle.gml</script>
+    </scripts>
+    <scripts name="avoidance">
+      <script>scripts\scrSetAVTime.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -307,11 +309,13 @@
         <object>objects\atkStutter</object>
         <object>objects\atkSpiral</object>
         <object>objects\atkSpray</object>
+        <object>objects\atkGravity</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>
         <object>objects\objParamBullet</object>
         <object>objects\objStoneBullet</object>
+        <object>objects\objRock</object>
         <object>objects\objStoneBulletP</object>
         <object>objects\objRockBreakShot</object>
         <object>objects\objBreakableShot</object>

@@ -5,4 +5,4 @@ if (instance_number(objBullet) < 4)
 }
 
 //jump to a time in the avoidance, for testing
-scrSetAVTime(global.testTime);
+if (global.debugMode) scrSetAVTime(global.testTime);

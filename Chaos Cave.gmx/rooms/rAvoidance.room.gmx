@@ -69,7 +69,7 @@
     <instance objName="atkSpiral" x="128" y="352" name="inst_67EF4FE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrackController" x="96" y="32" name="inst_05273E36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkSpray" x="160" y="352" name="inst_45CC768A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLaser" x="288" y="416" name="inst_6D0F5D5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="atkGravity" x="192" y="352" name="inst_6EC61E32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bBlocks" x="32" y="576" w="32" h="32" xo="96" yo="32" id="10003153" name="inst_201F2F84" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
