@@ -28,11 +28,13 @@
             <string>///initialize vars
 event_inherited();
 startTime = 3601;
-endTime = 4780;
+endTime = 5500;
 
 bulletSpeed = 11;
+bulletSize = 0.6;
 gravStrength = 0.23;
 shotInterval = 3;
+objToFire = objRock;
 
 rotation = 90; //the direction the spray is aimed at
 rotAmount = -4; //the number of degrees to rotate per frame
@@ -71,12 +73,13 @@ if (running)
     if (rotation &gt; 90 + rotRange || rotation &lt; 90 - rotRange) rotAmount = -rotAmount;
     rotation += rotAmount;
     
-    if (counter mod shotInterval == 0 &amp;&amp; global.avTimer &lt; 4750) //spawn a rock
+    
+    if (counter mod shotInterval == 0) //spawn a rock
     {
-        var rock = instance_create(room_width/2, room_height/2, objRock);
+        var rock = instance_create(room_width/2, room_height/2, objToFire);
         rock.gravity = gravStrength;
-        rock.image_xscale = 0.6;
-        rock.image_yscale = 0.6;
+        rock.image_xscale = bulletSize;
+        rock.image_yscale = bulletSize;
         rock.direction = rotation + random(rotAmount*shotInterval);
         rock.speed = bulletSpeed;
     }
@@ -142,12 +145,14 @@ if (running)
         laser1.turnAmount = -angleDiff/(4780-4735);
         laser2.turnAmount = angleDiff/(4780-4735);
     }
-    else if (global.avTimer == 4770) //remove lasers
+    else if (global.avTimer == 4770) //remove lasers and start firing cluster bombs
     {
-        //laser1.turnAmount = 0;
-        laser1.destroy = true;      
-        //laser2.turnAmount = 0;
+        laser1.destroy = true;
         laser2.destroy = true;
+        
+        objToFire = objClusterbomb;
+        shotInterval = 12;
+        bulletSize = 0.8;
     }
 }
 </string>

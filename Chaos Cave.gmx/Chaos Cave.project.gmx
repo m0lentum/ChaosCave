@@ -303,6 +303,7 @@
       <objects name="controllers">
         <object>objects\objAVcontroller</object>
         <object>objects\objAttack</object>
+        <object>objects\atkTemplate</object>
         <object>objects\atkBursts</object>
         <object>objects\atkRain</object>
         <object>objects\atkRainEnd</object>
@@ -316,6 +317,7 @@
         <object>objects\objParamBullet</object>
         <object>objects\objStoneBullet</object>
         <object>objects\objRock</object>
+        <object>objects\objClusterbomb</object>
         <object>objects\objStoneBulletP</object>
         <object>objects\objRockBreakShot</object>
         <object>objects\objBreakableShot</object>

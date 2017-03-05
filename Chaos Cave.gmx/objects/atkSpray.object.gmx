@@ -93,6 +93,7 @@ if (running)
             bullet.y += dsin(offsetAngle)*currentOffset;
             bullet.direction = angle + currentOffset;
             bullet.speed = random_range(minBSpeed, maxBSpeed);
+            bullet.sparkDensity = 0.5;
             
             //update offset
             if (abs(currentOffset + offsetIncrement) &gt; maxOffset) offsetIncrement = -offsetIncrement;
