@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objGlowing</parentName>
+  <parentName>objProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,22 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///base for projectiles controlled by a parametric curve
+            <string>///base for bullets that glow and sparkle
 event_inherited();
-rootX = 0; //start/center point of the curve
-rootY = 0;
-rotation = 0; //rotation of the curve
-scaleX = 100; //scaling of the curve
-scaleY = 100;
-tSpeed = 0.05; //speed at which to traverse curve
-curveType = 0; //refer to step event for available curves
+blendColor = global.blendColor;
+glowAlpha = 0.3;
+glowSprite = 0;
 
-t = 0;
-endT = -1;
-curving = true;
-prevX = 0;
-prevY = 0;
-realSpeed = 0;
+//particle stuff
+pColor = global.blendColor;
+pArea = 8;
+sparkDensity = 1;
 </string>
           </argument>
         </arguments>
@@ -63,57 +57,45 @@ realSpeed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>///create particles
+event_inherited();
 
-if (curving)
+if (speed != 0 &amp;&amp; irandom(30/(speed*sparkDensity)) == 0)
 {
-    switch (curveType)
-    {
-        case 0: //line at 45 degree angle
-            x = t;
-            y = t;
-            break;
-        case 1: //circle
-            x = cos(t);
-            y = sin(t);
-            break;
-        case 2: //spiral
-            x = t*cos(t);
-            y = t*sin(t);
-            break;
-        default:
-            x = 0;
-            y = 0;
-            break;
-    }
-    //scale position
-    x *= scaleX;
-    y *= scaleY;
-    //rotate position around origin
-    var newX = x*cos(rotation) - y*sin(rotation);
-    var newY = x*sin(rotation) + y*cos(rotation);
-    x = newX;
-    y = newY;
-    //translate position
-    x += rootX;
-    y += rootY;
-        
-    //rotate image to face movement direction
-    image_angle = point_direction(prevX, prevY, x, y);
-        
-    //increment the parameter, update speed and previous position
-    t += tSpeed;
-    realSpeed = point_distance(prevX, prevY, x, y);
-    if (endT &gt; 0 &amp;&amp; t &gt; endT)
-    {
-        //if end of curve has been reached, start going straight like a normal bullet
-        speed = realSpeed;
-        direction = image_angle;
-        curving = false;
-    }
-    prevX = x;
-    prevY = y;
+    part_particles_create_color(global.particleSystem, 
+        random_range(x - pArea, x + pArea), 
+        random_range(y - pArea, y + pArea), 
+        global.pSpark, pColor, 1)
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw the normal sprite and glow on top
+
+draw_self();
+draw_set_blend_mode(bm_add);
+draw_sprite_ext(glowSprite, 0, x, y, image_xscale, image_yscale,
+    image_angle, blendColor, random_range(glowAlpha - glowAlpha*0.4, glowAlpha + glowAlpha*0.4));
+draw_set_blend_mode(bm_normal);
 </string>
           </argument>
         </arguments>

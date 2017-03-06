@@ -1,4 +1,6 @@
 ///initializes all global variables needed for the game
+global.avTimer = -1;
+global.blendColor = $366af0;
 
 scrSetGlobalOptions();       //initialize global game options
 

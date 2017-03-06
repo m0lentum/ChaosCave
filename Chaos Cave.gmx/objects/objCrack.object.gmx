@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>baseAlpha = 0.15;
 currentAlpha = 0;
-image_blend = $4667ec;
+image_blend = make_color_hsv(color_get_hue(global.blendColor),
+    color_get_saturation(global.blendColor),
+    color_get_value(global.blendColor)-25);
 image_alpha = currentAlpha;
 fade = 0.001;
 lifetime = random_range(250, 280);

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///reset vars and start music
 global.avTimer = 0;
+global.blendColor = $366af0;
 
 with (objPlayer) infjump = true;
 
@@ -71,6 +72,7 @@ if (!instance_exists(objPlayer))
     instance_destroy();
 }
 
+//start and stop attacks
 with (objAttack)
 {
     if (global.avTimer == startTime)
@@ -81,6 +83,14 @@ with (objAttack)
     {
         instance_destroy();
     }
+}
+
+//change blend color of bullets
+if (global.avTimer mod 10 == 0)
+{
+    global.blendColor = make_color_hsv(color_get_hue(global.blendColor)+1,
+        color_get_saturation(global.blendColor), color_get_value(global.blendColor));
+    with (objBigRock) blendColor = global.blendColor;
 }
 </string>
           </argument>

@@ -115,6 +115,7 @@
       <sprite>sprites\sprStoneBullet</sprite>
       <sprite>sprites\sprStoneBulletGlow</sprite>
       <sprite>sprites\sprRock</sprite>
+      <sprite>sprites\sprRockGlow</sprite>
       <sprite>sprites\sprLaser</sprite>
       <sprite>sprites\sprLaserMask</sprite>
     </sprites>
@@ -315,6 +316,7 @@
       <objects name="objects">
         <object>objects\objProjectile</object>
         <object>objects\objParamBullet</object>
+        <object>objects\objGlowing</object>
         <object>objects\objStoneBullet</object>
         <object>objects\objRock</object>
         <object>objects\objClusterbomb</object>

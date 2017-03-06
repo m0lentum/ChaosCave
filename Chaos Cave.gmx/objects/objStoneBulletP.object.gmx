@@ -27,13 +27,16 @@
             <kind>1</kind>
             <string>///parametric curve version of stone bullet
 event_inherited();
-blendColor = merge_color($366af0, $3030ee, random(1));
+blendColor = merge_color(global.blendColor,
+    make_color_hsv(color_get_hue(global.blendColor) - 10,
+    color_get_saturation(global.blendColor),
+    color_get_value(global.blendColor)), random(1));
 glowAlpha = 0.3;
+glowSprite = sprStoneBulletGlow;
 
 //particle stuff
-pBaseColor = $366af0;
-pDist = sprite_width/2;
 pArea = 8;
+sparkDensity = 1;
 </string>
           </argument>
         </arguments>
