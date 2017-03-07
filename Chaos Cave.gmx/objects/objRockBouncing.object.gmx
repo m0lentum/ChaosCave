@@ -8,7 +8,7 @@
   <parentName>objRock</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -27,57 +27,7 @@
             <kind>1</kind>
             <string>event_inherited();
 
-numChildren = 2;
-splitsToGo = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objBlock">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///shatter and shoot out smaller rocks
-if (splitsToGo &gt; 0)
-{
-    var sector = 0;
-    var angle = 0;
-    var increment = 90/numChildren;
-    
-    while (sector &lt; numChildren)
-    {
-        angle = 45 + (sector*increment + random(increment)) mod 90;
-        var spawnX = x + 5*dcos(angle);
-        var spawnY = y - 5*dsin(angle);
-        if (place_free(spawnX, spawnY))
-        {
-            var rock = instance_create(spawnX, spawnY, objClusterbomb);
-            rock.direction = angle;
-            rock.speed = (sqrt(spawnY/room_height))*random_range(10, 14);
-            rock.image_xscale = 0.75*image_xscale;
-            rock.image_yscale = 0.75*image_yscale;
-            rock.gravity = 0.2;
-            rock.sparkDensity = 0.5*rock.image_xscale;
-            rock.splitsToGo = splitsToGo - 1;
-        }
-        sector++;
-    }
-}
-instance_destroy();
+move_bounce_solid(false);
 </string>
           </argument>
         </arguments>

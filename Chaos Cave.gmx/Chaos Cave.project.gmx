@@ -320,6 +320,7 @@
         <object>objects\objStoneBullet</object>
         <object>objects\objRock</object>
         <object>objects\objClusterbomb</object>
+        <object>objects\objRockBouncing</object>
         <object>objects\objStoneBulletP</object>
         <object>objects\objRockBreakShot</object>
         <object>objects\objBreakableShot</object>

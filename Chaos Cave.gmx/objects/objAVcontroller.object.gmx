@@ -86,7 +86,7 @@ with (objAttack)
 }
 
 //change blend color of bullets
-if (global.avTimer mod 10 == 0)
+if (global.avTimer mod 15 == 0)
 {
     global.blendColor = make_color_hsv(color_get_hue(global.blendColor)+1,
         color_get_saturation(global.blendColor), color_get_value(global.blendColor));

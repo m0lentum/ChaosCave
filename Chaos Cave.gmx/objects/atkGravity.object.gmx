@@ -28,7 +28,7 @@
             <string>///initialize vars
 event_inherited();
 startTime = 3601;
-endTime = 5500;
+endTime = 5200;
 
 bulletSpeed = 11;
 bulletSize = 0.6;
