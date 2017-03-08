@@ -114,8 +114,10 @@
     <sprites name="avoidance">
       <sprite>sprites\sprStoneBullet</sprite>
       <sprite>sprites\sprStoneBulletGlow</sprite>
-      <sprite>sprites\sprRock</sprite>
       <sprite>sprites\sprRockGlow</sprite>
+      <sprite>sprites\sprRock</sprite>
+      <sprite>sprites\sprRockShard</sprite>
+      <sprite>sprites\sprRockShardGlow</sprite>
       <sprite>sprites\sprLaser</sprite>
       <sprite>sprites\sprLaserMask</sprite>
     </sprites>
@@ -312,6 +314,7 @@
         <object>objects\atkSpiral</object>
         <object>objects\atkSpray</object>
         <object>objects\atkGravity</object>
+        <object>objects\atkBouncing</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>
@@ -327,6 +330,7 @@
         <object>objects\objStutterShot</object>
         <object>objects\objBigRock</object>
         <object>objects\objLaser</object>
+        <object>objects\objRockShard</object>
       </objects>
     </objects>
     <objects name="background">

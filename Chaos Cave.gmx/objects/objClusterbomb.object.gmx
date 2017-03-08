@@ -67,7 +67,7 @@ if (splitsToGo &gt; 0)
         {
             var rock = instance_create(spawnX, spawnY, objClusterbomb);
             rock.direction = angle;
-            rock.speed = (sqrt(spawnY/room_height))*random_range(10, 14);
+            rock.speed = (sqrt(spawnY/room_height))*random_range(10, 12);
             rock.image_xscale = 0.75*image_xscale;
             rock.image_yscale = 0.75*image_yscale;
             rock.gravity = 0.2;

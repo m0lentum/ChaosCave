@@ -25,13 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set start time
+            <string>///initialize vars
 event_inherited();
-startTime = 1100;
-endTime = 1240;
+startTime = 5350;
+endTime = 5900;
 
-targetX = room_width / 2;
-targetY = room_height / 2;
+shotInterval = 70;
+shotsPerBurst = 3;
+bulletSpeed = 6;
 </string>
           </argument>
         </arguments>
@@ -56,35 +57,53 @@ targetY = room_height / 2;
             <kind>1</kind>
             <string>event_inherited();
 if (running)
-{
-    counter = global.avTimer - startTime;
-    //destroy bullets outside room on the first frame
-    if (counter == 1) with (objRockBreakShot)
+{    
+    if (counter mod shotInterval == 0) //spawn a shot
     {
-        if (x &lt; 10 || x &gt; room_width - 10 || y &lt; 10 || y &gt; room_height - 10) instance_destroy();
+        var angle = 0;
+        var sectorSize = 360/shotsPerBurst;
+        for (var i = 0; i &lt; shotsPerBurst; i++)
+        {
+            var rock = instance_create(room_width/2, room_height/2, objRockBouncing);
+            rock.direction = angle + random_range(sectorSize/5, 4*sectorSize/5);
+            rock.speed = bulletSpeed;
+            rock.image_xscale = 0.7;
+            rock.image_yscale = 0.7;
+            
+            angle += sectorSize;
+        }
+        
+        with (objBigRock)
+        {
+            grow = -1;
+            effect_create_above(ef_smoke, x, y, 0, make_color_hsv(color_get_hue(blendColor),
+                                color_get_saturation(blendColor)-50, color_get_value(blendColor)-150));
+        }
+    }
+    else if (counter mod (shotInterval/2) == 0) //grow big rock back up
+    {
+        with (objBigRock) grow = 4/other.shotInterval;
     }
     
-    //big rock grows in the middle
-    with (objBigRock) grow = 0.02;
-    
-    if (counter &lt; 50)
+    if (global.avTimer == endTime - 1)
     {
-        if (counter mod 2 == 1) with (objRockBreakShot) speed *= 0.8;
-    }
-    else if (counter &lt; 70)
-    {
-        with (objRockBreakShot)
+        with (objRockBouncing)
         {
-            speed = 0;
-            var diff = angle_difference(direction, point_direction(x, y, other.targetX, other.targetY));
-            direction -= min(abs(diff), 9) * sign(diff);
-        } 
-    }
-    else
-    {
-        if (counter mod 3 == 0)
-        {
-            with (objRockBreakShot) speed++;
+            var angle = irandom(120);
+            for (var i = 0; i &lt; 3; i++)
+            {
+                var shard = instance_create(x, y, objRockShard);
+                shard.image_angle = angle;
+                shard.image_xscale = image_xscale;
+                shard.image_yscale = image_yscale;
+                shard.speed /= 2;
+                shard.hspeed += hspeed;
+                shard.vspeed += vspeed;
+                angle += 120;
+            }
+            effect_create_above(ef_smoke, x, y, 0, make_color_hsv(color_get_hue(blendColor),
+                                color_get_saturation(blendColor)-50, color_get_value(blendColor)-150));
+            instance_destroy();
         }
     }
 }

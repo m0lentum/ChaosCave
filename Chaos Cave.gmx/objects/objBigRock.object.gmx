@@ -29,6 +29,51 @@
 
 glowSprite = sprRockGlow;
 glowAlpha = 0.15;
+
+grow = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///grow if necessary
+event_inherited();
+
+if (grow != 0)
+{
+    image_xscale += grow;
+    image_yscale += grow;
+    
+    if (image_xscale &gt;= 2)
+    {
+        grow = 0;
+        image_xscale = 2;
+        image_yscale = 2;
+    }
+    else if (image_xscale &lt;= 0)
+    {
+        grow = 0;
+        image_xscale = 0;
+        image_yscale = 0;
+    }
+}
 </string>
           </argument>
         </arguments>
