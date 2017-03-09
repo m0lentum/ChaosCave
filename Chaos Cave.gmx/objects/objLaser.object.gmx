@@ -31,6 +31,9 @@ image_blend = c_red;
 image_alpha = 0.8;
 image_yscale = 0;
 fixedLength = false; //whether or not to calculate distance to edge every frame
+targeted = false; //aim at the target coordinates or not
+targetX = 0;
+targetY = 0;
 
 turnAmount = 0;
 turnInterval = 1;
@@ -59,16 +62,25 @@ counter = 0;
             <kind>1</kind>
             <string>if (counter mod turnInterval == 0) direction += turnAmount;
 
-if (destroy)
+if (targeted)
+{
+    direction = point_direction(x, y, targetX, targetY);
+    if (fixedLength) image_xscale = point_distance(x, y, targetX, targetY);
+}
+
+
+if (destroy) //pop in / pop out
 {
     image_yscale -= 0.1;
     if (image_yscale &lt;= 0.1) instance_destroy();
 }
 else
 {
-    if (image_yscale &lt;= 0.9) image_yscale += 0.1; // pop in anim
+    if (image_yscale &lt;= 0.9) image_yscale += 0.1;
+    if (image_yscale &lt;= 0.9) image_yscale += 0.1;
     else image_yscale = 1.0;
 }
+
 
 counter++;
 </string>

@@ -28,11 +28,17 @@
             <string>///initialize vars
 event_inherited();
 startTime = 5901;
-endTime = 6500;
+endTime = 8000;
 
 laserInterval = 50;
 radius = 200;
 numRocks = 20;
+
+innerRing = ds_list_create();
+outerRing = ds_list_create();
+
+laserRoot = 0; //starting rock for the laser
+laserTarget = 0; //ending rock for the laser
 </string>
           </argument>
         </arguments>
@@ -73,7 +79,7 @@ if (running)
             rock.image_xscale = 1.5;
             rock.image_yscale = 1.5;
             
-            innerRing[i] = rock;
+            ds_list_add(innerRing, rock);
         }
         
         for (var i = 0; i &lt; numRocks*1.5; i++) //spawn fast outside ring
@@ -87,24 +93,79 @@ if (running)
             rock.rotation = i*360/numRocks;
             rock.tSpeed = -0.03;
             
-            outerRing[i] = rock;
+            ds_list_add(outerRing, rock);
         }
     }
     else if (counter &lt; 200)
     {
-        var sSpeed = (innerRing[0].scaleX - radius)/(200 - counter);
-        for (var i = 0; i &lt; array_length_1d(innerRing); i++)
+        var sSpeed = (innerRing[| 0].scaleX - radius)/(200 - counter);
+        for (var i = 0; i &lt; ds_list_size(innerRing); i++)
         {
-            innerRing[i].scaleX -= sSpeed;
-            innerRing[i].scaleY -= sSpeed;
+            innerRing[| i].scaleX -= sSpeed;
+            innerRing[| i].scaleY -= sSpeed;
         }
-        sSpeed = (outerRing[0].scaleX - radius - 40)/(200 - counter);
-        for (var i = 0; i &lt; array_length_1d(outerRing); i++)
+        sSpeed = (outerRing[| 0].scaleX - radius - 40)/(200 - counter);
+        for (var i = 0; i &lt; ds_list_size(outerRing); i++)
         {
-            outerRing[i].scaleX -= sSpeed;
-            outerRing[i].scaleY -= sSpeed;
+            outerRing[| i].scaleX -= sSpeed;
+            outerRing[| i].scaleY -= sSpeed;
         }
     }
+    else if (ds_exists(innerRing, ds_type_list))
+    {
+        if (counter mod laserInterval == 0) //spawn a laser
+        {
+            numRocks = ds_list_size(innerRing);
+            show_debug_message(string(numRocks));
+                    
+            laserRoot = irandom(numRocks - 1);
+            laserTarget = (laserRoot + numRocks div 2 + irandom_range(-1, 1)) mod numRocks; 
+            if (laserTarget == laserRoot) laserTarget = (laserTarget + 1) mod numRocks;
+            show_debug_message(string(laserRoot)+" to "+string(laserTarget));
+            
+            var laser = instance_create(innerRing[| laserRoot].x, innerRing[| laserRoot].y, objLaser);
+            laser.fixedLength = true;
+            laser.targeted = true;
+            laser.targetX = innerRing[| laserTarget].x;
+            laser.targetY = innerRing[| laserTarget].y;
+        }
+        else if ((counter + 10) mod laserInterval == 0) //despawn laser and shatter rocks involved
+        {
+            with (objLaser) destroy = true;
+            
+            with (innerRing[| laserRoot])
+            {
+                instance_destroy();
+            }
+            with (innerRing[| laserTarget])
+            {
+                instance_destroy();
+            }
+            if (laserRoot &gt; laserTarget) // delete higher index first so we don't delete the wrong thing
+            {
+                ds_list_delete(innerRing, laserRoot);
+                ds_list_delete(innerRing, laserTarget);
+            }
+            else
+            {
+                ds_list_delete(innerRing, laserTarget);
+                ds_list_delete(innerRing, laserRoot);
+            }
+            if (ds_list_size(innerRing) &lt; 2) ds_list_destroy(innerRing); //destroy the list when it's empty
+        }
+        
+        with (objLaser) //update laser position
+        {
+            if (!destroy)
+            {
+                x = other.innerRing[| other.laserRoot].x;
+                y = other.innerRing[| other.laserRoot].y;
+                targetX = other.innerRing[| other.laserTarget].x;
+                targetY = other.innerRing[| other.laserTarget].y;
+            }
+        }
+    }
+    
     
     with (objRockP) blendColor = global.blendColor;
 }
