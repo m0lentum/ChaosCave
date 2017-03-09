@@ -1,5 +1,6 @@
 ///initializes all global variables needed for the game
 global.avTimer = -1;
+global.wobbleTime = shader_get_uniform(sdrWobble, "time");
 global.blendColor = $366af0;
 
 scrSetGlobalOptions();       //initialize global game options
