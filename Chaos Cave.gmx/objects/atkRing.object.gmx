@@ -25,10 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///set start time
+            <string>///initialize vars
 event_inherited();
-startTime = 1;
-endTime = 10000;
+startTime = 5901;
+endTime = 6500;
+
+laserInterval = 50;
+radius = 200;
+numRocks = 20;
 </string>
           </argument>
         </arguments>
@@ -53,21 +57,56 @@ endTime = 10000;
             <kind>1</kind>
             <string>event_inherited();
 if (running)
-{
-    if (global.avTimer == 1 || global.avTimer == 550)
+{    
+    if (counter == 0) //spawn ring of rocks
     {
-        var nextX = 0;
-        while (nextX &lt; 690)
+        for (var i = 0; i &lt; numRocks; i++)
         {
-            nextX += random_range(90, 100);
-            var bullet = instance_create(nextX, 0, objStoneBullet);
-            bullet.direction = random_range(265, 275);
-            bullet.speed = random_range(6, 9);
-            bullet.glowAlpha = random_range(0.3, 0.5);
-            bullet.blendColor = $3030ee;
-            bullet.pColor = $3030ee;
+            var rock = instance_create(0, 0, objRockP);
+            rock.curveType = 1;
+            rock.rootX = room_width/2;
+            rock.rootY = room_height/2;
+            rock.scaleX = 550;
+            rock.scaleY = 550;
+            rock.rotation = i*360/numRocks;
+            rock.tSpeed = 0.01;
+            rock.image_xscale = 1.5;
+            rock.image_yscale = 1.5;
+            
+            innerRing[i] = rock;
+        }
+        
+        for (var i = 0; i &lt; numRocks*1.5; i++) //spawn fast outside ring
+        {
+            var rock = instance_create(0, 0, objRockP);
+            rock.curveType = 1;
+            rock.rootX = room_width/2;
+            rock.rootY = room_height/2;
+            rock.scaleX = 580;
+            rock.scaleY = 580;
+            rock.rotation = i*360/numRocks;
+            rock.tSpeed = -0.03;
+            
+            outerRing[i] = rock;
         }
     }
+    else if (counter &lt; 200)
+    {
+        var sSpeed = (innerRing[0].scaleX - radius)/(200 - counter);
+        for (var i = 0; i &lt; array_length_1d(innerRing); i++)
+        {
+            innerRing[i].scaleX -= sSpeed;
+            innerRing[i].scaleY -= sSpeed;
+        }
+        sSpeed = (outerRing[0].scaleX - radius - 40)/(200 - counter);
+        for (var i = 0; i &lt; array_length_1d(outerRing); i++)
+        {
+            outerRing[i].scaleX -= sSpeed;
+            outerRing[i].scaleY -= sSpeed;
+        }
+    }
+    
+    with (objRockP) blendColor = global.blendColor;
 }
 </string>
           </argument>

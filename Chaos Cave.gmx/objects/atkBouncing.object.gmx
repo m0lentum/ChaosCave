@@ -80,7 +80,7 @@ if (running)
                                 color_get_saturation(blendColor)-50, color_get_value(blendColor)-150));
         }
     }
-    else if (counter mod (shotInterval/2) == 0) //grow big rock back up
+    else if (counter mod (shotInterval/2) == 0 &amp;&amp; global.avTimer &lt; endTime - shotInterval) //grow big rock back up
     {
         with (objBigRock) grow = 4/other.shotInterval;
     }

@@ -315,15 +315,17 @@
         <object>objects\atkSpray</object>
         <object>objects\atkGravity</object>
         <object>objects\atkBouncing</object>
+        <object>objects\atkRing</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>
         <object>objects\objParamBullet</object>
         <object>objects\objGlowing</object>
-        <object>objects\objStoneBullet</object>
         <object>objects\objRock</object>
+        <object>objects\objRockP</object>
         <object>objects\objClusterbomb</object>
         <object>objects\objRockBouncing</object>
+        <object>objects\objStoneBullet</object>
         <object>objects\objStoneBulletP</object>
         <object>objects\objRockBreakShot</object>
         <object>objects\objBreakableShot</object>

@@ -30,6 +30,7 @@ destroy = false; // are we supposed to be destroying the laser
 image_blend = c_red;
 image_alpha = 0.8;
 image_yscale = 0;
+fixedLength = false; //whether or not to calculate distance to edge every frame
 
 turnAmount = 0;
 turnInterval = 1;
@@ -118,22 +119,24 @@ counter++;
             <string>if (firing) image_index = 1;
 else image_index = 0;
 
-/*do some math to figure out the distance to the nearest wall and set image width to that distance
-so the laser always ends at the edge of the room*/
-//first, determine which quarter of the room we're aiming at so we know which walls to look for
-var quarter = direction div 90;
-var targetX = 0;
-if (quarter == 0 || quarter == 3) targetX = room_width;
-var targetY = 0;
-if (quarter == 2 || quarter == 3) targetY = room_height;
-//choose whichever distance to a wall ends up being the shorter one, but first make sure we're not dividing by zero
-var cosDir = dcos(direction);
-var sinDir = dsin(direction);
-if (cosDir == 0) image_xscale = sinDir*(y - targetY);
-else if (sinDir == 0) image_xscale = cosDir*(targetX - x);
-else image_xscale = min((targetX - x)/cosDir, (y - targetY)/sinDir);
-//debug thingy
-//draw_text(200, 100, string(quarter)+", "+string(targetX)+", "+string(targetY));
+if (!fixedLength) {
+    /*do some math to figure out the distance to the nearest wall and set image width to that distance
+    so the laser always ends at the edge of the room*/
+    //first, determine which quarter of the room we're aiming at so we know which walls to look for
+    var quarter = direction div 90;
+    var targetX = 32;
+    if (quarter == 0 || quarter == 3) targetX = room_width - 32;
+    var targetY = 32;
+    if (quarter == 2 || quarter == 3) targetY = room_height - 32;
+    //choose whichever distance to a wall ends up being the shorter one, but first make sure we're not dividing by zero
+    var cosDir = dcos(direction);
+    var sinDir = dsin(direction);
+    if (cosDir == 0) image_xscale = sinDir*(y - targetY);
+    else if (sinDir == 0) image_xscale = cosDir*(targetX - x);
+    else image_xscale = min((targetX - x)/cosDir, (y - targetY)/sinDir);
+    //debug thingy
+    //draw_text(200, 100, string(quarter)+", "+string(targetX)+", "+string(targetY));
+}
 
 image_angle = direction;
 

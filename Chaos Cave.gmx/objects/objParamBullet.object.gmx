@@ -90,8 +90,8 @@ if (curving)
     x *= scaleX;
     y *= scaleY;
     //rotate position around origin
-    var newX = x*cos(rotation) - y*sin(rotation);
-    var newY = x*sin(rotation) + y*cos(rotation);
+    var newX = x*dcos(rotation) - y*dsin(rotation);
+    var newY = x*dsin(rotation) + y*dcos(rotation);
     x = newX;
     y = newY;
     //translate position

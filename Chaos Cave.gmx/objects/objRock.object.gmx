@@ -29,7 +29,7 @@
 
 glowSprite = sprRockGlow;
 glowAlpha = 0.2;
-sparkDensity = 0.5;
+sparkDensity = 0.3;
 </string>
           </argument>
         </arguments>

@@ -34,7 +34,7 @@ bulletSpeed = 0.03;
 shotInterval = 6;
 spiralSize = 150;
 currentAngle = 0; //direction of the last shot fired
-angleInterval = 15; //amount to shift angle between shots
+angleInterval = 45; //amount to shift angle between shots
 </string>
           </argument>
         </arguments>
