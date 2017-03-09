@@ -323,6 +323,7 @@
         <object>objects\objGlowing</object>
         <object>objects\objRock</object>
         <object>objects\objRockP</object>
+        <object>objects\objRockLaserable</object>
         <object>objects\objClusterbomb</object>
         <object>objects\objRockBouncing</object>
         <object>objects\objStoneBullet</object>

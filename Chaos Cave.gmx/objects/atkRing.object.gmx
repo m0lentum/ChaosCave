@@ -62,7 +62,7 @@ if (running)
     {
         for (var i = 0; i &lt; numRocks; i++)
         {
-            var rock = instance_create(0, 0, objRockP);
+            var rock = instance_create(0, 0, objRockLaserable);
             rock.curveType = 1;
             rock.rootX = room_width/2;
             rock.rootY = room_height/2;
@@ -72,8 +72,6 @@ if (running)
             rock.tSpeed = 0.01;
             rock.image_xscale = 1.5;
             rock.image_yscale = 1.5;
-            
-            innerRing[i] = rock;
         }
         
         for (var i = 0; i &lt; numRocks*1.5; i++) //spawn fast outside ring
@@ -86,24 +84,26 @@ if (running)
             rock.scaleY = 580;
             rock.rotation = i*360/numRocks;
             rock.tSpeed = -0.03;
-            
-            outerRing[i] = rock;
         }
     }
-    else if (counter &lt; 200)
+    else if (counter &lt; 200) //rocks move in from the edge
     {
-        var sSpeed = (innerRing[0].scaleX - radius)/(200 - counter);
-        for (var i = 0; i &lt; array_length_1d(innerRing); i++)
+        with (objRockLaserable)
         {
-            innerRing[i].scaleX -= sSpeed;
-            innerRing[i].scaleY -= sSpeed;
+            var sSpeed = (scaleX - other.radius)/(200 - other.counter);
+            scaleX -= sSpeed;
+            scaleY -= sSpeed;
         }
-        sSpeed = (outerRing[0].scaleX - radius - 40)/(200 - counter);
-        for (var i = 0; i &lt; array_length_1d(outerRing); i++)
+        with (objRockP)
         {
-            outerRing[i].scaleX -= sSpeed;
-            outerRing[i].scaleY -= sSpeed;
+            var sSpeed = (scaleX - other.radius - 40)/(200 - other.counter);
+            scaleX -= sSpeed;
+            scaleY -= sSpeed;
         }
+    }
+    else if (counter mod laserInterval == 0)
+    {
+        
     }
     
     with (objRockP) blendColor = global.blendColor;
