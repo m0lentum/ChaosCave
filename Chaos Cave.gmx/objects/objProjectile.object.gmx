@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objPlayerKiller</parentName>
+  <parentName>objGlowing</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///base class for projectiles
+event_inherited();
 curveAmount = 0;
 curveInterval = 1;
 </string>
@@ -50,7 +51,9 @@ curveInterval = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = direction;
+            <string>event_inherited();
+
+image_angle = direction;
 
 if (global.avTimer mod curveInterval == 0)
 {

@@ -331,7 +331,7 @@
         <object>objects\objStoneBullet</object>
         <object>objects\objStoneBulletP</object>
         <object>objects\objRockBreakShot</object>
-        <object>objects\objBreakableShot</object>
+        <object>objects\objTileBreakShot</object>
         <object>objects\objStutterShot</object>
         <object>objects\objBigRock</object>
         <object>objects\objLaser</object>

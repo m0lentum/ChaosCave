@@ -73,10 +73,10 @@ if (destroy) //pop in / pop out
 {
     image_yscale -= 0.1;
     if (image_yscale &lt;= 0.1) instance_destroy();
+    else if (image_yscale &lt;= 0.5) firing = false;
 }
 else
 {
-    if (image_yscale &lt;= 0.9) image_yscale += 0.1;
     if (image_yscale &lt;= 0.9) image_yscale += 0.1;
     else image_yscale = 1.0;
 }

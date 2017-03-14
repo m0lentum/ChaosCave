@@ -14,7 +14,7 @@ const mediump float PI = 3.141592;
 
 void main()
 {
-    vec2 displacement = vec2(cos(in_Position.x + time*0.1), sin(in_Position.y + time*0.075));
+    vec2 displacement = vec2(cos(in_Position.x + time*0.075)*0.75, sin(in_Position.y + time*0.05)*0.75);
     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * (object_space_pos + vec4(displacement, 0, 0));
     

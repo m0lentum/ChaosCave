@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>event_inherited();
 
+killedBySaveBlockers = false;
+
 glowSprite = sprRockGlow;
 glowAlpha = 0.2;
 sparkDensity = 0;
@@ -53,6 +55,7 @@ sparkDensity = 0;
           <argument>
             <kind>1</kind>
             <string>///don't destroy so we can make a big circle outside the room
+if (killedBySaveBlockers) instance_destroy();
 </string>
           </argument>
         </arguments>

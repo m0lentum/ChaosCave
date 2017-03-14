@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objProjectile</parentName>
+  <parentName>objPlayerKiller</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///base for bullets that glow and sparkle
+            <string>///base for things that glow and sparkle
 event_inherited();
 blendColor = global.blendColor;
 glowAlpha = 0.3;
@@ -60,7 +60,7 @@ sparkDensity = 1;
             <string>///create particles
 event_inherited();
 
-if (speed != 0 &amp;&amp; irandom(30/(speed*sparkDensity)) == 0)
+if (sparkDensity != 0 &amp;&amp; speed != 0 &amp;&amp; irandom(30/(speed*sparkDensity)) == 0)
 {
     part_particles_create_color(global.particleSystem, 
         random_range(x - pArea, x + pArea), 

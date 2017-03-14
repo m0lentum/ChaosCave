@@ -31,7 +31,7 @@ global.blendColor = $366af0;
 
 with (objPlayer) infjump = true;
 
-global.testTime = 2000;
+global.testTime = 5800;
 
 scrToggleMusic();
 scrToggleMusic();

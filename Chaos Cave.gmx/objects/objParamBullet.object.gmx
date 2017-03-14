@@ -104,15 +104,15 @@ if (curving)
     //increment the parameter, update speed and previous position
     t += tSpeed;
     realSpeed = point_distance(prevX, prevY, x, y);
-    if (endT &gt; 0 &amp;&amp; t &gt; endT)
-    {
-        //if end of curve has been reached, start going straight like a normal bullet
-        speed = realSpeed;
-        direction = image_angle;
-        curving = false;
-    }
+    //if end of curve has been reached, start going straight like a normal bullet
+    if (endT &gt; 0 &amp;&amp; t &gt; endT) curving = false;
     prevX = x;
     prevY = y;
+}
+else
+{
+    speed = realSpeed;
+    direction = image_angle;
 }
 </string>
           </argument>
