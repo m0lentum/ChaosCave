@@ -30,12 +30,13 @@ event_inherited();
 startTime = 7135;
 endTime = 10000;
 
-
 burstInterval = 34;
 burstCounter = 1;
 
 angleRange = 3;
-gapSize = 90;
+gapSize = 110;
+
+numCornerBullets = 5;
 </string>
           </argument>
         </arguments>
@@ -63,16 +64,17 @@ if (running)
 {
     if (counter mod burstInterval == 0) 
     {
-        if (burstCounter &lt;= 16) //straight burst out of entire wall
+        var burst = burstCounter div 2;
+        if (burstCounter &lt;= 16 &amp;&amp; burstCounter mod 2 == 0) //straight burst out of entire wall
         {
             var nextX = -20;
             var nextY = -20; 
-            var phase = burstCounter mod 4;
+            var phase = burst mod 4;
             if (phase == 0) nextX = room_width;
             else if (phase == 3) nextY = room_height;
             
-            var incrX = burstCounter mod 2 == 1; // whether or not to increment X
-            var incrY = (burstCounter + 1) mod 2 == 1; //same with Y
+            var incrX = burst mod 2 == 1; // whether or not to increment X
+            var incrY = (burst + 1) mod 2 == 1; //same with Y
             
             var angle = ((phase)*90 + 180) mod 360;
             
@@ -83,26 +85,39 @@ if (running)
                 if (incrY) nextY += random_range(gapSize, gapSize + 10);
                 var bullet = instance_create(nextX, nextY, objStoneBullet);
                 bullet.direction = random_range(angle - angleRange, angle + angleRange);
-                bullet.speed = random_range(4, 6);
+                bullet.speed = random_range(6, 8);
             }
-            
-            burstCounter++;
         }
-        else if (burstCounter &lt;= 24) //gravity burst out of corners
+        else if (burstCounter &lt;= 16 &amp;&amp; burstCounter mod 2 == 1) //gravity burst out of corners
         {
-            var phase = burstCounter mod 4;
+            var phase = (burst + 1) mod 4;
             var startX = 0;
             var startY = 0;
 
-            if (phase &lt;= 1) startX = room_width/2;
-            if (phase == 3 || phase == 0) startY = room_height/2;
+            if (phase &lt;= 1) startX = room_width;
+            if (phase == 3 || phase == 0) startY = room_height;
             
-            //TODO actually spawn the burst
+            var angle = ((phase + 1)*90) mod 360 - 15;
+            if (phase &gt;= 2) angle += 45;
+            var angleIncr = 75/numCornerBullets;
+            
+            for (var i = 0; i &lt; numCornerBullets; i++)
+            {
+                var bullet = instance_create(startX, startY, objStoneBullet);
+                bullet.direction = angle + random_range(angleIncr/3, 2*angleIncr/3);
+                bullet.speed = 1;
+                bullet.speed = random_range(0, 2) + sign(startY)*13 + abs(bullet.hspeed*sign(room_height - startY))*9;
+                bullet.gravity = 0.18 - sign(room_height - startY)*0.03;
+                
+                angle += angleIncr;
+            }
         }
-        else if (burstCounter &lt;= 32 &amp;&amp; burstCounter mod 2 == 1) //double burst out of both bottom corners
+        else if (burstCounter mod 2 == 1) //double burst out of both bottom corners
         {
             
         }
+        
+        burstCounter++;
     }
 }
 </string>
