@@ -33,8 +33,8 @@ with (objPlayer) infjump = true;
 
 global.testTime = 7000;
 
-scrToggleMusic();
-scrToggleMusic();
+scrStopMusic();
+scrGetMusic();
 
 with (objBigRock)
 {
@@ -42,6 +42,28 @@ with (objBigRock)
     image_yscale = 0;
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -92,6 +114,9 @@ if (global.avTimer mod 15 == 0)
         color_get_saturation(global.blendColor), color_get_value(global.blendColor));
     with (objBigRock) blendColor = global.blendColor;
 }
+
+
+if (global.avTimer &gt; 9700) scrStopMusic();
 </string>
           </argument>
         </arguments>

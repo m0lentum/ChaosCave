@@ -28,13 +28,13 @@
             <string>///set start time
 event_inherited();
 startTime = 7135;
-endTime = 10000;
+endTime = 8250;
 
 burstInterval = 34;
 burstCounter = 1;
 
 angleRange = 3;
-gapSize = 110;
+gapSize = 100;
 
 numCornerBullets = 5;
 </string>
@@ -65,7 +65,7 @@ if (running)
     if (counter mod burstInterval == 0) 
     {
         var burst = burstCounter div 2;
-        if (burstCounter &lt;= 16 &amp;&amp; burstCounter mod 2 == 0) //straight burst out of entire wall
+        if (burstCounter mod 2 == 0) //straight burst out of entire wall
         {
             var nextX = -20;
             var nextY = -20; 
@@ -88,7 +88,7 @@ if (running)
                 bullet.speed = random_range(6, 8);
             }
         }
-        else if (burstCounter &lt;= 16 &amp;&amp; burstCounter mod 2 == 1) //gravity burst out of corners
+        else if (burstCounter mod 2 == 1) //gravity burst out of corners
         {
             var phase = (burst + 1) mod 4;
             var startX = 0;
@@ -112,12 +112,10 @@ if (running)
                 angle += angleIncr;
             }
         }
-        else if (burstCounter mod 2 == 1) //double burst out of both bottom corners
-        {
-            
-        }
         
-        burstCounter++;
+        if (burstCounter &gt; 8 || (counter div burstInterval) mod 2 == 1) burstCounter++;
+        
+        if (burstCounter &gt; 24) instance_destroy();
     }
 }
 </string>
