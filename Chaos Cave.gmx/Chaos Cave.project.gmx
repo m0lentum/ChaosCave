@@ -310,7 +310,6 @@
         <object>objects\objAVcontroller</object>
         <object>objects\objAttack</object>
         <object>objects\atkTemplate</object>
-        <object>objects\atkBursts</object>
         <object>objects\atkRain</object>
         <object>objects\atkRainEnd</object>
         <object>objects\atkStutter</object>
@@ -319,6 +318,7 @@
         <object>objects\atkGravity</object>
         <object>objects\atkBouncing</object>
         <object>objects\atkRing</object>
+        <object>objects\atkBursts</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>

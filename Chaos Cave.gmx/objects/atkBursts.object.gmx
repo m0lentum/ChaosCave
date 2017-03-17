@@ -27,8 +27,15 @@
             <kind>1</kind>
             <string>///set start time
 event_inherited();
-startTime = 1;
+startTime = 7135;
 endTime = 10000;
+
+
+burstInterval = 34;
+burstCounter = 1;
+
+angleRange = 3;
+gapSize = 90;
 </string>
           </argument>
         </arguments>
@@ -54,18 +61,47 @@ endTime = 10000;
             <string>event_inherited();
 if (running)
 {
-    if (global.avTimer == 1 || global.avTimer == 550)
+    if (counter mod burstInterval == 0) 
     {
-        var nextX = 0;
-        while (nextX &lt; 690)
+        if (burstCounter &lt;= 16) //straight burst out of entire wall
         {
-            nextX += random_range(90, 100);
-            var bullet = instance_create(nextX, 0, objStoneBullet);
-            bullet.direction = random_range(265, 275);
-            bullet.speed = random_range(6, 9);
-            bullet.glowAlpha = random_range(0.3, 0.5);
-            bullet.blendColor = $3030ee;
-            bullet.pColor = $3030ee;
+            var nextX = -20;
+            var nextY = -20; 
+            var phase = burstCounter mod 4;
+            if (phase == 0) nextX = room_width;
+            else if (phase == 3) nextY = room_height;
+            
+            var incrX = burstCounter mod 2 == 1; // whether or not to increment X
+            var incrY = (burstCounter + 1) mod 2 == 1; //same with Y
+            
+            var angle = ((phase)*90 + 180) mod 360;
+            
+            while ((incrX &amp;&amp; nextX &lt; room_width - gapSize - 40) 
+                            || (incrY &amp;&amp; nextY &lt; room_height - gapSize - 40))
+            {
+                if (incrX) nextX += random_range(gapSize, gapSize + 10);
+                if (incrY) nextY += random_range(gapSize, gapSize + 10);
+                var bullet = instance_create(nextX, nextY, objStoneBullet);
+                bullet.direction = random_range(angle - angleRange, angle + angleRange);
+                bullet.speed = random_range(4, 6);
+            }
+            
+            burstCounter++;
+        }
+        else if (burstCounter &lt;= 24) //gravity burst out of corners
+        {
+            var phase = burstCounter mod 4;
+            var startX = 0;
+            var startY = 0;
+
+            if (phase &lt;= 1) startX = room_width/2;
+            if (phase == 3 || phase == 0) startY = room_height/2;
+            
+            //TODO actually spawn the burst
+        }
+        else if (burstCounter &lt;= 32 &amp;&amp; burstCounter mod 2 == 1) //double burst out of both bottom corners
+        {
+            
         }
     }
 }
