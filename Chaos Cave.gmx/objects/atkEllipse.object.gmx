@@ -28,10 +28,12 @@
             <string>///initialize vars
 event_inherited();
 startTime = 8230;
-endTime = 10000;
+endTime = 9461;
 
-shotInterval = 25;
+shotInterval = 18;
+spiralInterval = 3;
 sectorSize = 60;
+spiralSectorSize = 60;
 currentAngle = 0;
 
 rockGrowing = false;
@@ -59,42 +61,91 @@ rockGrowing = false;
             <kind>1</kind>
             <string>event_inherited();
 if (running)
-{    
-    if (counter mod shotInterval == 0)
+{
+    if (global.avTimer &lt; 8700)
     {
-        var bullet = instance_create(-10, -10, objStoneBulletP);
-        bullet.curveType = 1;
-        bullet.rootX = room_width/2;
-        bullet.rootY = room_height/2;
-        bullet.scaleX = 500;
-        bullet.scaleY = 250;
-        bullet.rotation = currentAngle + random_range(sectorSize/3, 2*sectorSize/3);
-        bullet.tSpeed = 0.02;
-        
-        currentAngle += sectorSize;
-    }
-    
-    with (objStoneBulletP)
-    {
-        scaleX -= t*0.5;
-        scaleY -= t*0.25;
-        tSpeed += 0.00005;
-        if (scaleY &lt; 0)
+        if (counter mod shotInterval == 0) //spawn bullets
         {
-            other.rockGrowing = true;
+            var bullet = instance_create(-10, -10, objStoneBulletP);
+            bullet.curveType = 1;
+            bullet.rootX = room_width/2;
+            bullet.rootY = room_height/2;
+            bullet.scaleX = 500;
+            bullet.scaleY = 250;
+            bullet.rotation = currentAngle + random_range(sectorSize/3, 2*sectorSize/3);
+            bullet.tSpeed = 0.015;
+            
+            currentAngle += sectorSize;
+        }
+    }
+    else if (global.avTimer &lt; 9340)
+    {
+        if (counter mod spiralInterval == 0) //spawn outward expanding ellispes
+        {
+            var bullet = instance_create(-10, -10, objStoneBulletP);
+            bullet.curveType = 2;
+            bullet.rootX = room_width/2;
+            bullet.rootY = room_height/2;
+            bullet.scaleX = 100;
+            bullet.scaleY = 100;
+            bullet.rotation = currentAngle + random_range(spiralSectorSize/5, 4*spiralSectorSize/5);
+            bullet.tSpeed = -0.02;
+            bullet.sparkDensity = 0.2;
+            
+            currentAngle += spiralSectorSize;
+        }
+    }
+    else if (global.avTimer == 9340) with (objStoneBulletP) curving = false;
+    else if (global.avTimer == 9460) //shatter big rock at the end
+    {
+        with (objBigRock)
+        {
+            var angle = 45;
+            var numRocks = 30;
+            var interval = 90/numRocks;
+            for (var i = 0; i &lt; numRocks; i++)
+            {
+                var rock = instance_create(x, y, objRock);
+                rock.direction = angle + random_range(interval/3, 2*interval/3);
+                rock.speed = random_range(10, 12);
+                rock.image_xscale = 0.8;
+                rock.image_yscale = 0.8;
+                rock.gravity = 0.22;
+                
+                angle += interval;
+            }
+            
+            effect_create_above(ef_smoke, x, y, 0, make_color_hsv(color_get_hue(blendColor),
+                                color_get_saturation(blendColor)-50, color_get_value(blendColor)-150));
+            
             instance_destroy();
         }
     }
     
-    if (rockGrowing)
+    with (objStoneBulletP) //change bullet path scale and destroy ones at the center
+    {
+        if (curveType == 1)
+        {
+            scaleX -= t*0.5;
+            scaleY -= t*0.25;
+            tSpeed += 0.00005;
+            
+            if (scaleY &lt; 0)
+            {
+                other.rockGrowing = true;
+                instance_destroy();
+            }
+        }
+    }
+    
+    if (rockGrowing) //grow big rock
     {
         with (objBigRock)
         {
             image_xscale += 0.02;
             image_yscale += 0.02;
-            var fract = frac(image_xscale*10.0);
+            var fract = frac(image_xscale*10);
             if (fract &lt; .0001 || fract &gt; .9999) other.rockGrowing = false;
-            //show_debug_message(string(image_xscale*10.0)+"-&gt;"+string(fract));
         }
     }
 }
