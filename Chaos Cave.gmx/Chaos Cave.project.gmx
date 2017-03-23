@@ -319,6 +319,7 @@
         <object>objects\atkBouncing</object>
         <object>objects\atkRing</object>
         <object>objects\atkBursts</object>
+        <object>objects\atkEllipse</object>
       </objects>
       <objects name="objects">
         <object>objects\objProjectile</object>
