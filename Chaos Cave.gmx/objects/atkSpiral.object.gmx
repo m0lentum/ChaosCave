@@ -31,7 +31,7 @@ startTime = 2465;
 endTime = 3000;
 
 bulletSpeed = 0.03;
-shotInterval = 6;
+shotInterval = 3;
 spiralSize = 150;
 currentAngle = 0; //direction of the last shot fired
 angleInterval = 45; //amount to shift angle between shots

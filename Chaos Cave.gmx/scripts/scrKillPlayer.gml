@@ -4,9 +4,9 @@ if (instance_exists(objPlayer) && (!global.noDeath && !global.debugNoDeath))
 {
     if (objPlayer.iframes <= 0) 
     {
-        hp--;
+        objPlayer.hp--;
         global.deathSound = audio_play_sound(sndDeath,0,false);
-        if (hp < 1)
+        if (objPlayer.hp < 1)
         {
             if (global.gameStarted) //normal death
             {

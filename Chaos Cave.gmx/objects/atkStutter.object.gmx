@@ -31,10 +31,10 @@ startTime = 1240;
 endTime = 2441;
 
 playerArea = 20; //area around player (in degrees) that gets separate rng
-clearZone = 5; //gap around the player area to prevent crappy rng at the edge
+clearZone = 10; //gap around the player area to prevent crappy rng at the edge
 moving = true; //are bullets moving or turning
 bulletSpeed = 7;
-shotInterval = 3;
+shotInterval = 4;
 atPlayerInterval = 8;
 curve = 2;
 </string>

@@ -31,6 +31,8 @@ startTime = 1;
 endTime = 1100;
 angle = 270;
 spawnDistance = 400;
+shotInterval = 10;
+atPlayerInterval = 4;
 playerArea = 100;
 </string>
           </argument>
@@ -59,7 +61,7 @@ if (running)
 {
     if (global.avTimer mod 3 == 0) angle--;
     
-    if (global.avTimer mod 7 == 0)
+    if (global.avTimer mod shotInterval == 0)
     {
         var bulletAngle = angle;
         var i = 0;
@@ -76,7 +78,7 @@ if (running)
             //shift bullet to the side a random amount
             var randDist = 0;
             //at specific intervals, shoot a bullet near the player
-            if (global.avTimer mod 28 == 0) randDist = random_range(-playerArea, playerArea);
+            if (global.avTimer mod (shotInterval*atPlayerInterval) == 0) randDist = random_range(-playerArea, playerArea);
             else
             {
                 //make sure bullet isn't too close to player if we don't want it to
