@@ -29,7 +29,12 @@
 global.avTimer = 0;
 global.blendColor = $366af0;
 
-with (objPlayer) infjump = true;
+with (objPlayer)
+{
+    infjump = true;
+    maxhp = 3;
+    hp = maxhp;
+}
 
 global.testTime = 8000;
 

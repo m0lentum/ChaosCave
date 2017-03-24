@@ -29,7 +29,7 @@
 
 difSelect = false;
 select = global.menuSelectPrev[0];
-select2 = 0;
+select2 = 1;
 xSeperation = 239;
 str[0] = "Save 1";
 str[1] = "Save 2";
@@ -184,7 +184,7 @@ else
             if (global.menuMode == 0)   //use the difficulty select room to select difficulty
             {
                 global.savenum = select+1;
-                room_goto(rDifficultySelect);
+                room_goto(rLevelSelect);
             }
             else    //use the menu to select difficulty
             {
@@ -200,7 +200,7 @@ else
     {
         if (!warnText)
         {
-            if (scrButtonCheckPressed(global.menuLeftButton))
+            /*if (scrButtonCheckPressed(global.menuLeftButton))
             {
                 audio_play_sound(global.menuSound,0,false);
                 select2 -= 1;
@@ -219,7 +219,7 @@ else
                         select2 = 0;
                 }
             }
-            else if (scrButtonCheckPressed(global.menuBackButton))
+            else */if (scrButtonCheckPressed(global.menuBackButton))
             {
                 difSelect = false;
             }

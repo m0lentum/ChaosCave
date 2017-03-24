@@ -111,7 +111,7 @@
       <sprite>sprites\sprSecretItem</sprite>
       <sprite>sprites\sprBossItem</sprite>
     </sprites>
-    <sprites name="avoidance">
+    <sprites name="custom">
       <sprite>sprites\sprStoneBullet</sprite>
       <sprite>sprites\sprStoneBulletGlow</sprite>
       <sprite>sprites\sprRockGlow</sprite>
@@ -120,9 +120,10 @@
       <sprite>sprites\sprRockShardGlow</sprite>
       <sprite>sprites\sprLaser</sprite>
       <sprite>sprites\sprLaserMask</sprite>
-    </sprites>
-    <sprites name="background">
-      <sprite>sprites\sprCrack01</sprite>
+      <sprite>sprites\sprHeart</sprite>
+      <sprites name="background">
+        <sprite>sprites\sprCrack01</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -305,7 +306,7 @@
       <object>objects\objBossIndicator</object>
       <object>objects\objGameClear</object>
     </objects>
-    <objects name="avoidance">
+    <objects name="custom">
       <objects name="controllers">
         <object>objects\objAVcontroller</object>
         <object>objects\objAttack</object>
@@ -337,11 +338,12 @@
         <object>objects\objBigRock</object>
         <object>objects\objLaser</object>
         <object>objects\objRockShard</object>
+        <object>objects\objHeart</object>
       </objects>
-    </objects>
-    <objects name="background">
-      <object>objects\objCrack</object>
-      <object>objects\objCrackController</object>
+      <objects name="background">
+        <object>objects\objCrack</object>
+        <object>objects\objCrackController</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

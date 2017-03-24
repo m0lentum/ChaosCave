@@ -5,7 +5,7 @@ ini_open("config.ini");
 //settings
 global.muteMusic = ini_read_real("Settings","Mute_music",false);
 
-global.volumeLevel = clamp(floor(ini_read_real("Settings","Volume_level",100)),0,100);
+global.volumeLevel = clamp(floor(ini_read_real("Settings","Volume_level",10)),0,100);
 audio_master_gain(global.volumeLevel/100);
 
 global.fullscreenMode = ini_read_real("Settings","Fullscreen_mode",false);

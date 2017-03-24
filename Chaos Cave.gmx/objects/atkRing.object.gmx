@@ -175,26 +175,30 @@ if (running)
             with (innerRing[| laserRoot])
             {
                 var angle = point_direction(x, y, room_width/2, room_height/2) - 69;
-                for (var i = 0; i &lt; 3; i++) //spawn bullets
+                var numBullets = 4;
+                var incr = 135/numBullets;
+                for (var i = 0; i &lt; numBullets; i++) //spawn bullets
                 {
                     var bullet = instance_create(x, y, objStoneBullet);
                     bullet.speed = random_range(3, 4);
-                    bullet.direction = angle + random_range(10, 35);
+                    bullet.direction = angle + random_range(incr/4, 3*incr/4);
                     bullet.image_xscale = 0.75; bullet.image_yscale = 0.75;
-                    angle += 45;
+                    angle += incr;
                 }
                 instance_destroy();
             }
             with (innerRing[| laserTarget])
             {
                 var angle = point_direction(x, y, room_width/2, room_height/2) - 69;
-                for (var i = 0; i &lt; 3; i++) //spawn bullets
+                var numBullets = 4;
+                var incr = 135/numBullets;
+                for (var i = 0; i &lt; numBullets; i++) //spawn bullets
                 {
                     var bullet = instance_create(x, y, objStoneBullet);
                     bullet.speed = random_range(3, 4);
-                    bullet.direction = angle + random_range(10, 35);
+                    bullet.direction = angle + random_range(incr/4, 3*incr/4);
                     bullet.image_xscale = 0.75; bullet.image_yscale = 0.75;
-                    angle += 45;
+                    angle += incr;
                 }
                 instance_destroy();
             }

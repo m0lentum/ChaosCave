@@ -77,6 +77,21 @@ if (splitsToGo &gt; 0)
         sector++;
     }
 }
+else
+{
+    var angle = random(180);
+    for (var i = 0; i &lt; 2; i++)
+    {
+        var shard = instance_create(x, y, objRockShard);
+        shard.image_angle = angle;
+        shard.image_xscale = image_xscale/2;
+        shard.image_yscale = image_yscale/2;
+        shard.speed /= 2;
+        shard.hspeed += hspeed;
+        shard.vspeed += vspeed;
+        angle += 180;
+    }
+}
 instance_destroy();
 </string>
           </argument>

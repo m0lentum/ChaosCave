@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>frozen = false; //sets if the player can move or not
+            <string>hp = 1;
+maxhp = 1;
+iframes = 0;
+
+frozen = false; //sets if the player can move or not
 
 jump = 8.5 * global.grav; //set how fast the player jumps
 jump2 = 7 * global.grav; //sets how fast the player double jumps
@@ -170,7 +174,18 @@ if (global.playerAnimationFix)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//check left/right button presses
+            <string>if (iframes &gt; 0)
+{
+    iframes--;
+    image_alpha = 0.5;
+}
+else
+{
+    image_alpha = 1;
+}
+
+
+//check left/right button presses
 var L = (scrButtonCheck(global.leftButton) || (global.directionalTapFix &amp;&amp; scrButtonCheckPressed(global.leftButton)));
 var R = (scrButtonCheck(global.rightButton) || (global.directionalTapFix &amp;&amp; scrButtonCheckPressed(global.rightButton)));
 
