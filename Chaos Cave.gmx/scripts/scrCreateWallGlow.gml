@@ -1,4 +1,5 @@
 var iy = argument0 mod 84;
+while (iy < 0) iy += 84;
 var ix = 0;
 var rotation = 0;
 var isCorner = (iy == 0 || iy == 18 || iy == 42 || iy == 60);
@@ -25,3 +26,4 @@ if (iy >= 18)
 var glow = instance_create(ix*32 + 16, iy*32 + 16, objBlockGlow);
 glow.image_angle = rotation;
 if (isCorner) glow.image_index = 1;
+if (argument_count > 1) glow.lifetime = argument1;

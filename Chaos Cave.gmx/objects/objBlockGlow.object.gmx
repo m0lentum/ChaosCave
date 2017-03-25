@@ -29,8 +29,8 @@
 currentAlpha = 0;
 image_blend = global.blendColor;
 image_alpha = currentAlpha;
-absFade = 0.01;
-fade = absFade;
+fadeIn = 0.005;
+fadeOut = fadeIn;
 lifetime = 50;
 timer = 0;
 image_speed = 0;
