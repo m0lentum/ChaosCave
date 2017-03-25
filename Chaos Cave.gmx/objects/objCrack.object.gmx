@@ -31,7 +31,8 @@ image_blend = make_color_hsv(color_get_hue(global.blendColor),
     color_get_saturation(global.blendColor),
     color_get_value(global.blendColor)-25);
 image_alpha = currentAlpha;
-fade = 0.001;
+absFade = 0.001;
+fade = absFade;
 lifetime = random_range(250, 280);
 timer = 0;
 </string>
@@ -69,7 +70,7 @@ if (irandom((1 - currentAlpha)*(1-currentAlpha)*150) == 0)
 timer++;
 if (timer &gt; lifetime)
 {
-    fade = -0.001;
+    fade = -absFade;
     if (currentAlpha &lt;= 0) instance_destroy();
 }
 else if (fade != 0 &amp;&amp; currentAlpha &gt;= baseAlpha) fade = 0;

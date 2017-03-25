@@ -123,6 +123,7 @@
       <sprite>sprites\sprHeart</sprite>
       <sprites name="background">
         <sprite>sprites\sprCrack01</sprite>
+        <sprite>sprites\sprBlockGlow</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -177,6 +178,7 @@
     </scripts>
     <scripts name="avoidance">
       <script>scripts\scrSetAVTime.gml</script>
+      <script>scripts\scrCreateWallGlow.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -343,6 +345,7 @@
       <objects name="background">
         <object>objects\objCrack</object>
         <object>objects\objCrackController</object>
+        <object>objects\objBlockGlow</object>
       </objects>
     </objects>
   </objects>

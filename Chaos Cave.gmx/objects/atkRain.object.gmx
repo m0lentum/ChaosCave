@@ -34,6 +34,7 @@ spawnDistance = 400;
 shotInterval = 10;
 atPlayerInterval = 4;
 playerArea = 100;
+currentGlow = 0;
 </string>
           </argument>
         </arguments>
@@ -115,6 +116,9 @@ if (running)
             bullet.pColor = $3030ee;
         }
     }
+    
+    
+    if (counter mod 3 == 0) scrCreateWallGlow(currentGlow++);
 }
 </string>
           </argument>
