@@ -9,8 +9,3 @@ Twitter: @moletrooper
 You can get the GMS project on GitHub here: https://github.com/MoleTrooper/ChaosCave
 All sprites aside from what comes with the engine are custom made. Please ask me
 for permission if you would like to use them.
-
-Information for testers using the GMS project:
-You can move to a time in the avoidance by shooting (if debug keys are on).
-This time is determined by the global.testTime variable, which is set in the create
-event of objAVcontroller.

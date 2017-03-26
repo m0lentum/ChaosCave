@@ -124,6 +124,7 @@
       <sprites name="background">
         <sprite>sprites\sprCrack01</sprite>
         <sprite>sprites\sprBlockGlow</sprite>
+        <sprite>sprites\sprExclamation</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -346,6 +347,7 @@
         <object>objects\objCrack</object>
         <object>objects\objCrackController</object>
         <object>objects\objBlockGlow</object>
+        <object>objects\objExclamation</object>
       </objects>
     </objects>
   </objects>

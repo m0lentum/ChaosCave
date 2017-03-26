@@ -27,11 +27,13 @@
             <kind>1</kind>
             <string>///set start time
 event_inherited();
-startTime = 7135;
+startTime = 7100;
 endTime = 8250;
 
 burstInterval = 34;
 burstCounter = 1;
+glowCounter = 1;
+glowTime = 25;
 
 angleRange = 3;
 gapSize = 100;
@@ -60,7 +62,7 @@ numCornerBullets = 5;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-if (running)
+if (running &amp;&amp; counter &gt; 0)
 {
     if (counter mod burstInterval == 0) 
     {
@@ -113,9 +115,46 @@ if (running)
             }
         }
         
-        if (burstCounter &gt; 8 || (counter div burstInterval) mod 2 == 1) burstCounter++;
+        if (burstCounter &gt; 8 || (counter div burstInterval) mod 2 == 0) burstCounter++;
         
         if (burstCounter &gt; 24) instance_destroy();
+    }
+    else if ((counter + glowTime) mod burstInterval == 0) //create glow
+    {
+        var glowStart;
+        var numGlows;
+        var phase = burstCounter mod 8;
+        switch (phase)
+        {
+            case 1:
+                glowStart = 56; break;
+            case 2:
+                glowStart = 60; break;
+            case 3:
+                glowStart = 80; break;
+            case 4:
+                glowStart = 0; break;
+            case 5:
+                glowStart = 14; break;
+            case 6:
+                glowStart = 18; break;
+            case 7:
+                glowStart = 38; break;
+            default:
+                glowStart = 42; break;
+        }
+        if (phase mod 2 == 1) numGlows = 9;
+        else if (phase mod 4 == 0) numGlows = 19;
+        else numGlows = 25;
+        
+        for (var i = 0; i &lt; numGlows; i++)
+        {
+            var glow = scrCreateWallGlow(glowStart + i);
+            glow.lifetime = glowTime;
+            glow.baseAlpha = 0.3 - abs((numGlows div 2 - i)/numGlows)*0.5;
+            glow.fadeIn = glow.baseAlpha/glowTime;
+            glow.fadeOut = 0.02;
+        }
     }
 }
 </string>

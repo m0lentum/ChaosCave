@@ -37,7 +37,11 @@ playerArea = 100;
 currentGlow = 0;
 
 
-for (var i = 0; i &lt; 24; i++) scrCreateWallGlow(currentGlow--, 10*i);
+for (var i = 0; i &lt; 24; i++)
+{
+    var glow = scrCreateWallGlow(currentGlow--);
+    glow.lifetime = 10*i;
+}
 with (objBlockGlow) fadeIn = 0.2;
 </string>
           </argument>
@@ -147,16 +151,26 @@ if (running)
     //create glow on the walls
     if (counter mod 14 == 0) 
     {
-        if (counter &gt; 550) scrCreateWallGlow(currentGlow + 42, 300);
-        scrCreateWallGlow(currentGlow--, 300);
+        if (counter &gt; 550)
+        {
+            var glow = scrCreateWallGlow(currentGlow + 42);
+            glow.lifetime = 300;
+        }
+        var glow = scrCreateWallGlow(currentGlow--);
+        glow.lifetime = 300;
     }
     
     //create start of second glow stripe
     if (counter == 550) 
     {
         var tempGlow = 0;
-        for (var i = 0; i &lt;= 85 + (currentGlow mod 84); i++) scrCreateWallGlow(tempGlow--, 10*i);
+        for (var i = 0; i &lt;= 85 + (currentGlow mod 84); i++) 
+        {
+            var glow = scrCreateWallGlow(tempGlow--);
+            glow.lifetime = 10*i;
+        }
     }
+    else if (global.avTimer == endTime - 80) instance_create(room_width/2, room_height/2, objExclamation);
 }
 </string>
           </argument>
