@@ -60,7 +60,7 @@ sparkDensity = 1;
             <string>///create particles
 event_inherited();
 
-if (sparkDensity != 0 &amp;&amp; speed != 0 &amp;&amp; irandom(40/(speed*sparkDensity)) == 0)
+if (global.particlesEnabled &amp;&amp; sparkDensity != 0 &amp;&amp; speed != 0 &amp;&amp; irandom(40/(speed*sparkDensity)) == 0)
 {
     part_particles_create_color(global.particleSystem, 
         random_range(x - pArea, x + pArea), 

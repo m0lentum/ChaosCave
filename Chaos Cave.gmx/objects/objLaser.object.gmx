@@ -156,7 +156,7 @@ if (!fixedLength) {
         var wallX = x + cosDir*image_xscale;
         var wallY = y - sinDir*image_xscale;
         //spawn sparks
-        if (counter mod 2 == 0)
+        if (global.particlesEnabled &amp;&amp; counter mod 2 == 0)
         {
             part_particles_create_color(global.particleSystem, wallX, wallY,
                 global.pSpark, c_red, 1);

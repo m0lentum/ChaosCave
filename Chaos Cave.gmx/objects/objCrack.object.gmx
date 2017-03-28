@@ -58,7 +58,7 @@ timer = 0;
           <argument>
             <kind>1</kind>
             <string>///spawn sparks and handle fade in/out
-if (irandom((1 - currentAlpha)*(1-currentAlpha)*150) == 0)
+if (global.particlesEnabled &amp;&amp; irandom((1 - currentAlpha)*(1-currentAlpha)*150) == 0)
 {
     var dist = random(sprite_width);
     part_particles_create_color(global.particleSystem, 

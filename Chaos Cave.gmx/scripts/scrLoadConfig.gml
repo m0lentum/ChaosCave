@@ -16,6 +16,8 @@ global.smoothingMode = ini_read_real("Settings","Smoothing_mode",false);
 global.vsyncMode = ini_read_real("Settings","Vsync_mode",false);
 if (global.vsyncMode)   //only need to set vsync mode if it's on since it's off by default
     scrSetVsync();
+    
+global.particlesEnabled = ini_read_real("Settings","Particle_effects",true);
 
 //keyboard controls
 global.leftButton[0] = ini_read_real("Controls","Left",vk_left);

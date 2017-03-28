@@ -114,6 +114,15 @@ else
     speed = realSpeed;
     direction = image_angle;
 }
+
+//create particles
+if (global.particlesEnabled &amp;&amp; realSpeed != 0 &amp;&amp; irandom(30 / realSpeed) == 0)
+{
+    part_particles_create_color(global.particleSystem, 
+        random_range(x - pArea, x + pArea), 
+        random_range(y - pArea, y + pArea), 
+        global.pSpark, blendColor, 1);
+}
 </string>
           </argument>
         </arguments>
