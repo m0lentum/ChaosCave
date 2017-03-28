@@ -28,6 +28,7 @@
             <string>text = "Text";
 fillColor = c_white;
 outlineColor = c_black;
+alpha = 1;
 </string>
           </argument>
         </arguments>
@@ -50,7 +51,9 @@ outlineColor = c_black;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrDrawTextOutline(x, y, text, fillColor, outlineColor);
+            <string>draw_set_alpha(alpha);
+scrDrawTextOutline(x, y, text, fillColor, outlineColor);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

@@ -200,18 +200,18 @@ else
     {
         if (!warnText)
         {
-            /*if (scrButtonCheckPressed(global.menuLeftButton))
+            if (scrButtonCheckPressed(global.menuLeftButton))
             {
                 audio_play_sound(global.menuSound,0,false);
                 select2 -= 1;
                 if ((select2 == -1 &amp;&amp; !exists[select]) || (select2 &lt; -1))
-                    select2 = 3;
+                    select2 = 0;
             }
             else if (scrButtonCheckPressed(global.menuRightButton))
             {
                 audio_play_sound(global.menuSound,0,false);
                 select2 += 1;
-                if (select2 &gt; 3)
+                if (select2 &gt; 0)
                 {
                     if (exists[select])
                         select2 = -1;
@@ -219,7 +219,7 @@ else
                         select2 = 0;
                 }
             }
-            else */if (scrButtonCheckPressed(global.menuBackButton))
+            else if (scrButtonCheckPressed(global.menuBackButton))
             {
                 difSelect = false;
             }
@@ -332,7 +332,7 @@ else
         if (!warnText)
         {
             if(select2==-1) draw_text(x + i*xSeperation + 65, y+49,"&lt; Load game &gt;");
-            else if(select2==0) draw_text(x + i*xSeperation + 65, y+49,"&lt; Medium &gt;");
+            else if(select2==0) draw_text(x + i*xSeperation + 65, y+49,"&lt; New game &gt;");
             else if(select2==1) draw_text(x + i*xSeperation + 65, y+49,"&lt; Hard &gt;");
             else if(select2==2) draw_text(x + i*xSeperation + 65, y+49,"&lt; Very Hard &gt;");
             else if(select2==3) draw_text(x + i*xSeperation + 65, y+49,"&lt; Impossible &gt;");
@@ -378,13 +378,13 @@ else
     
     if (i == select)
     {
-        draw_sprite(sprCherry,appleIndex,x+i*xSeperation+5,y+310);
-        draw_sprite(sprCherry,appleIndex,x+i*xSeperation+25,y+310);
-        draw_sprite(sprCherry,appleIndex,x+i*xSeperation+45,y+310);
+        draw_sprite(sprRock,appleIndex,x+i*xSeperation+5,y+310);
+        draw_sprite(sprRock,appleIndex,x+i*xSeperation+25,y+310);
+        draw_sprite(sprRock,appleIndex,x+i*xSeperation+45,y+310);
         draw_sprite(sprPlayerIdle,playerIndex,x+i*xSeperation+65,y+310);
-        draw_sprite(sprCherry,appleIndex,x+i*xSeperation+85,y+310);
-        draw_sprite(sprCherry,appleIndex,x+i*xSeperation+105,y+310);
-        draw_sprite(sprCherry,appleIndex,x+i*xSeperation+125,y+310);
+        draw_sprite(sprRock,appleIndex,x+i*xSeperation+85,y+310);
+        draw_sprite(sprRock,appleIndex,x+i*xSeperation+105,y+310);
+        draw_sprite(sprRock,appleIndex,x+i*xSeperation+125,y+310);
     }
 }
 

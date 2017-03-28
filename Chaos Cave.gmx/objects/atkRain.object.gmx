@@ -35,14 +35,6 @@ shotInterval = 10;
 atPlayerInterval = 4;
 playerArea = 100;
 currentGlow = 0;
-
-
-for (var i = 0; i &lt; 24; i++)
-{
-    var glow = scrCreateWallGlow(currentGlow--);
-    glow.lifetime = 10*i;
-}
-with (objBlockGlow) fadeIn = 0.2;
 </string>
           </argument>
         </arguments>
@@ -91,9 +83,9 @@ with (objBlockGlow) fadeIn = 0.2;
             <string>event_inherited();
 if (running)
 {
-    if (global.avTimer mod 3 == 0) angle--;
+    if (counter mod 3 == 0) angle--;
     
-    if (global.avTimer mod shotInterval == 0)
+    if (counter mod shotInterval == 0)
     {
         var bulletAngle = angle;
         var i = 0;
@@ -110,7 +102,7 @@ if (running)
             //shift bullet to the side a random amount
             var randDist = 0;
             //at specific intervals, shoot a bullet near the player
-            if (global.avTimer mod (shotInterval*atPlayerInterval) == 0) randDist = random_range(-playerArea, playerArea);
+            if (counter mod (shotInterval*atPlayerInterval) == 0) randDist = random_range(-playerArea, playerArea);
             else
             {
                 //make sure bullet isn't too close to player if we don't want it to
@@ -133,7 +125,7 @@ if (running)
         }
     }
     
-    if (global.avTimer == 1 || global.avTimer == 550) //spawn bursts
+    if (counter == 0 || counter == 550) //spawn bursts
     {
         var nextX = 0;
         while (nextX &lt; 690)
@@ -148,10 +140,30 @@ if (running)
         }
     }
     
+    if (counter == 0) //create first glow stripe
+    {
+        for (var i = 0; i &lt; 24; i++)
+        {
+            var glow = scrCreateWallGlow(currentGlow--);
+            glow.lifetime = 10*i;
+            glow.fadeIn = 0.2;
+        }
+    }
+    else if (counter == 500)  //create start of second glow stripe
+    {
+        for (var i = 60; i &lt;= 84; i++) 
+        {
+            var glow = scrCreateWallGlow(i);
+            glow.lifetime = 10*(84 - i);
+            glow.image_blend = c_red;
+        }
+    }
+    else if (global.avTimer == endTime - 80) instance_create(room_width/2, room_height/2, objExclamation);
+    
     //create glow on the walls
     if (counter mod 14 == 0) 
     {
-        if (counter &gt; 550)
+        if (counter &gt; 580)
         {
             var glow = scrCreateWallGlow(currentGlow + 42);
             glow.lifetime = 300;
@@ -160,17 +172,8 @@ if (running)
         glow.lifetime = 300;
     }
     
-    //create start of second glow stripe
-    if (counter == 550) 
-    {
-        var tempGlow = 0;
-        for (var i = 0; i &lt;= 85 + (currentGlow mod 84); i++) 
-        {
-            var glow = scrCreateWallGlow(tempGlow--);
-            glow.lifetime = 10*i;
-        }
-    }
-    else if (global.avTimer == endTime - 80) instance_create(room_width/2, room_height/2, objExclamation);
+    
+    
 }
 </string>
           </argument>

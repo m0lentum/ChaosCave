@@ -46,8 +46,8 @@ xScale = 1; //sets the direction the player is facing (1 is facing right, -1 is 
 
 scrSetPlayerMask(); //set the player's hitbox
 
-if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create the player's bow
-    instance_create(x,y,objBow);
+/*if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create the player's bow
+    instance_create(x,y,objBow);*/
 
 if (global.autosave) //save the game if currently set to autosave
 {

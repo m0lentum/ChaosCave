@@ -29,13 +29,6 @@
 global.avTimer = 0;
 global.blendColor = $366af0;
 
-with (objPlayer)
-{
-    infjump = true;
-    maxhp = 3;
-    hp = maxhp;
-}
-
 global.testTime = 8100;
 
 scrStopMusic();
@@ -46,6 +39,8 @@ with (objBigRock)
     image_xscale = 0;
     image_yscale = 0;
 }
+
+with (instance_create(-10, -10, objText)) { alpha = 0; text = "Infinite jump"; }
 </string>
           </argument>
         </arguments>
@@ -99,6 +94,32 @@ if (!instance_exists(objPlayer))
     instance_destroy();
 }
 
+if (global.avTimer == 1)
+{
+    with (objPlayer)
+    {
+        infjump = true;
+        maxhp = 3;
+        hp = maxhp;
+    }
+}
+else if (global.avTimer &lt; 80)
+{
+    with (objText) { x = objPlayer.x; y = objPlayer.y - 48; }
+    
+    if (global.avTimer &lt; 40) with (objText) alpha += 1/50;
+    else with (objText) alpha -= 1/50;
+}
+else if (global.avTimer == 100) with (objText) instance_destroy();
+else if (global.avTimer == 9650) //end it
+{
+    scrStopMusic();
+    with (instance_create(room_width/2 - 16, room_height - 4*32, objWarp))
+    {
+        roomTo = rEnd;
+    }
+}
+
 //start and stop attacks
 with (objAttack)
 {
@@ -118,16 +139,6 @@ if (global.avTimer mod 15 == 0)
     global.blendColor = make_color_hsv(color_get_hue(global.blendColor)+1,
         color_get_saturation(global.blendColor), color_get_value(global.blendColor));
     with (objBigRock) blendColor = global.blendColor;
-}
-
-
-if (global.avTimer == 9650) //end it
-{
-    scrStopMusic();
-    with (instance_create(room_width/2 - 16, room_height - 4*32, objWarp))
-    {
-        roomTo = rEnd;
-    }
 }
 </string>
           </argument>
