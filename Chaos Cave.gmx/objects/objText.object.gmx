@@ -2,10 +2,10 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objAttack</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,22 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initialize vars
-event_inherited();
-startTime = 2465;
-endTime = 3000;
-
-bulletSpeed = 0.03;
-shotInterval = 4;
-spiralSize = 150;
-currentAngle = 0; //direction of the last shot fired
-angleInterval = 45; //amount to shift angle between shots
+            <string>text = "Text";
+fillColor = c_white;
+outlineColor = c_black;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -57,26 +50,7 @@ angleInterval = 45; //amount to shift angle between shots
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-if (running)
-{    
-    //spawn a shot
-    if (counter mod shotInterval == 0)
-    {
-        var angle = currentAngle + random(angleInterval);
-        currentAngle += angleInterval;
-        
-        var bullet = instance_create(0, 0, objStoneBulletP);
-        bullet.curveType = 2; //spiral trajectory
-        bullet.rootX = room_width/2;
-        bullet.rootY = room_height/2;
-        bullet.scaleX = spiralSize;
-        bullet.scaleY = spiralSize;
-        bullet.rotation = angle;
-        if (counter &lt; 265) bullet.tSpeed = -bulletSpeed;
-        else bullet.tSpeed = bulletSpeed;
-    }
-}
+            <string>scrDrawTextOutline(x, y, text, fillColor, outlineColor);
 </string>
           </argument>
         </arguments>

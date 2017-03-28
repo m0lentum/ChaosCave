@@ -36,7 +36,7 @@ with (objPlayer)
     hp = maxhp;
 }
 
-global.testTime = 4000;
+global.testTime = 8100;
 
 scrStopMusic();
 scrGetMusic();
@@ -121,7 +121,14 @@ if (global.avTimer mod 15 == 0)
 }
 
 
-if (global.avTimer &gt; 9700) scrStopMusic();
+if (global.avTimer == 9650) //end it
+{
+    scrStopMusic();
+    with (instance_create(room_width/2 - 16, room_height - 4*32, objWarp))
+    {
+        roomTo = rEnd;
+    }
+}
 </string>
           </argument>
         </arguments>

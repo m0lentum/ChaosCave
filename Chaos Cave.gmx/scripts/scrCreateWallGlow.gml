@@ -45,4 +45,4 @@ else
     exit;
 }
 
-scrCreateWallGlow(index);
+return scrCreateWallGlow(index);

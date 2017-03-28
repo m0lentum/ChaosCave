@@ -62,6 +62,13 @@ rockGrowing = false;
             <string>event_inherited();
 if (running)
 {
+    if (counter == 0) //spawn wall glow
+    {
+        for (var i = 0; i &lt; 84; i++)
+        {
+            with (scrCreateWallGlow(i)) lifetime = 450;
+        }
+    }
     if (global.avTimer &lt; 8700)
     {
         if (counter mod shotInterval == 0) //spawn bullets
@@ -148,6 +155,8 @@ if (running)
             if (fract &lt; .0001 || fract &gt; .9999) other.rockGrowing = false;
         }
     }
+    
+    with(objBlockGlow) blendColor = global.blendColor;
 }
 </string>
           </argument>

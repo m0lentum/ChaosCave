@@ -351,6 +351,7 @@
         <object>objects\objExclamation</object>
         <object>objects\objTitle</object>
         <object>objects\objTelegraph</object>
+        <object>objects\objText</object>
       </objects>
     </objects>
   </objects>
@@ -363,8 +364,9 @@
     </rooms>
     <room>rooms\rTemplate</room>
     <room>rooms\rEmpty</room>
-    <room>rooms\rAvoidance</room>
     <room>rooms\rLevelSelect</room>
+    <room>rooms\rAvoidance</room>
+    <room>rooms\rEnd</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

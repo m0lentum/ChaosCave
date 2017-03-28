@@ -32,8 +32,8 @@ endTime = 3600;
 
 numStreams = 3;
 
-minBSpeed = 3;
-maxBSpeed = 6;
+minBSpeed = 4;
+maxBSpeed = 8;
 shotInterval = 3;
 
 rotation = 0; //the direction the center of the spray is aimed at

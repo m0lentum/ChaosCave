@@ -173,19 +173,19 @@ if (!fixedLength) {
         {
             if (prevWallY == 0 || prevWallY == 18)
             {
-                for (var ix = 1; ix &lt;= abs(changeX); ix++) scrWallGlowAt(prevWallX + ix*sign(changeX), prevWallY);
-                for (var iy = 1; iy &lt;= abs(changeY); iy++) scrWallGlowAt(wallX, prevWallY + iy*sign(changeY));
+                for (var ix = 1; ix &lt;= abs(changeX); ix++) with(scrWallGlowAt(prevWallX + ix*sign(changeX), prevWallY)) fadeIn = 0.02;
+                for (var iy = 1; iy &lt;= abs(changeY); iy++) with(scrWallGlowAt(wallX, prevWallY + iy*sign(changeY))) fadeIn = 0.02;
             }
             else
             {
-                for (var ix = 1; ix &lt;= abs(changeX); ix++) scrWallGlowAt(prevWallX + ix*sign(changeX), wallY);
-                for (var iy = 1; iy &lt;= abs(changeY); iy++) scrWallGlowAt(prevWallX, prevWallY + iy*sign(changeY));
+                for (var ix = 1; ix &lt;= abs(changeX); ix++) with(scrWallGlowAt(prevWallX + ix*sign(changeX), wallY)) fadeIn = 0.02;
+                for (var iy = 1; iy &lt;= abs(changeY); iy++) with(scrWallGlowAt(prevWallX, prevWallY + iy*sign(changeY))) fadeIn = 0.02;
             }    
         }
         else if (changeX != 0)
-            for (var ix = 1; ix &lt;= abs(changeX); ix++) scrWallGlowAt(prevWallX + ix*sign(changeX), prevWallY);
+            for (var ix = 1; ix &lt;= abs(changeX); ix++) with(scrWallGlowAt(prevWallX + ix*sign(changeX), prevWallY)) fadeIn = 0.02;
         else if (changeY != 0)
-            for (var iy = 1; iy &lt;= abs(changeY); iy++) scrWallGlowAt(prevWallX, prevWallY + iy*sign(changeY));
+            for (var iy = 1; iy &lt;= abs(changeY); iy++) with(scrWallGlowAt(prevWallX, prevWallY + iy*sign(changeY))) fadeIn = 0.02;
             
         prevWallX = wallX;
         prevWallY = wallY;

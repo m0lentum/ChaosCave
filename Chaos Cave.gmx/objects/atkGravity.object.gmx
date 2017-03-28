@@ -33,11 +33,11 @@ endTime = 5200;
 bulletSpeed = 11;
 bulletSize = 0.6;
 gravStrength = 0.23;
-shotInterval = 3;
+shotInterval = 2;
 objToFire = objRock;
 
 rotation = 90; //the direction the spray is aimed at
-rotAmount = -4; //the number of degrees to rotate per frame
+rotAmount = -3.3; //the number of degrees to rotate per frame
 rotRange = 30;
 
 laser1 = 0; //the laser object indices
@@ -98,6 +98,8 @@ if (running)
             pointsX[3] = pointsX[2]; pointsY[3] = room_height - 32;
             pointsX[4] = room_width/2 + other.laserDir*195; pointsY[4] = room_height - 32;
         }
+        
+        //shotInterval = 3;
     }
     else if (global.avTimer == 4120) //start the first laser
     {
