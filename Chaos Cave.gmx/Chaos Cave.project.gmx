@@ -350,6 +350,7 @@
         <object>objects\objBlockGlow</object>
         <object>objects\objExclamation</object>
         <object>objects\objTitle</object>
+        <object>objects\objTelegraph</object>
       </objects>
     </objects>
   </objects>

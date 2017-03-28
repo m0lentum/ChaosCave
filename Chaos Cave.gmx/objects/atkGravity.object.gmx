@@ -90,6 +90,14 @@ if (running)
         
         if (objPlayer.x &gt; room_width/2) laserDir = -1;
         laser1.direction = 90 + laserDir*15;
+        
+        with (instance_create(0, 0, objTelegraph))
+        {
+            pointsX[1] = room_width/2 - other.laserDir*75; pointsY[1] = 32;
+            pointsX[2] = room_width/2 * abs(other.laserDir - 1) + other.laserDir*32; pointsY[2] = 32;
+            pointsX[3] = pointsX[2]; pointsY[3] = room_height - 32;
+            pointsX[4] = room_width/2 + other.laserDir*195; pointsY[4] = room_height - 32;
+        }
     }
     else if (global.avTimer == 4120) //start the first laser
     {
@@ -107,7 +115,15 @@ if (running)
         laserDir = -laserDir;
         laser2 = instance_create(room_width/2, room_height/2, objLaser);
         
-        laser2.direction = 90 + laserDir*10;
+        laser2.direction = 90 + laserDir*15;
+        
+        with (instance_create(0, 0, objTelegraph))
+        {
+            pointsX[1] = room_width/2 - other.laserDir*75; pointsY[1] = 32;
+            pointsX[2] = room_width/2 * abs(other.laserDir - 1) + other.laserDir*32; pointsY[2] = 32;
+            pointsX[3] = pointsX[2]; pointsY[3] = room_height - 32;
+            pointsX[4] = room_width/2 + other.laserDir*195; pointsY[4] = room_height - 32;
+        }
     }
     else if (global.avTimer == 4380) //start the second laser
     {
@@ -124,6 +140,17 @@ if (running)
         laser2 = instance_create(room_width/2, room_height/2, objLaser);
         laser1.direction = 90 + 15;
         laser2.direction = 90 - 15;
+        
+        
+        with (instance_create(0, 0, objTelegraph))
+        {
+            pointsX[1] = room_width/2 - 130; pointsY[1] = room_height - 32;
+            pointsX[2] = 32; pointsY[2] = room_height - 32;
+            pointsX[3] = 32; pointsY[3] = 32;
+            pointsX[4] = room_width - 32; pointsY[4] = 32;
+            pointsX[5] = room_width - 32; pointsY[5] = room_height - 32;
+            pointsX[6] = room_width/2 + 130; pointsY[6] = room_height - 32;
+        }
     }
     else if (global.avTimer == 4580) //start dual lasers
     {
