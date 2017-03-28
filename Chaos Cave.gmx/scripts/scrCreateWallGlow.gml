@@ -1,3 +1,4 @@
+#define scrCreateWallGlow
 var iy = argument0 mod 84;
 while (iy < 0) iy += 84;
 var ix = 0;
@@ -28,3 +29,20 @@ glow.image_angle = rotation;
 if (isCorner) glow.image_index = 1;
 
 return glow;
+
+#define scrWallGlowAt
+var ix = argument0;
+var iy = argument1;
+var index;
+
+if (ix == 0) index = iy;
+else if (iy == 18) index = 18 + ix;
+else if (ix == 24) index = 60 - iy;
+else if (iy == 0) index = 84 - ix;
+else
+{
+    show_debug_message("Tried to create glow somewhere not in a wall: "+string(ix)+", "+string(iy));
+    exit;
+}
+
+scrCreateWallGlow(index);

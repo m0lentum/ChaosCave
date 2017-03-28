@@ -64,7 +64,7 @@ if (irandom((1 - currentAlpha)*(1-currentAlpha)*150) == 0)
     part_particles_create_color(global.particleSystem, 
         x + dcos(image_angle)*dist, 
         y - dsin(image_angle)*dist, 
-        global.pSpark, image_blend, 1)
+        global.pSpark, image_blend, 1);
 }
 
 timer++;

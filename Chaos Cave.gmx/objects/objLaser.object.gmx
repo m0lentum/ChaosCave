@@ -38,6 +38,9 @@ targetY = 0;
 turnAmount = 0;
 turnInterval = 1;
 counter = 0;
+
+prevWallX = -1;
+prevWallY = -1;
 </string>
           </argument>
         </arguments>
@@ -136,18 +139,64 @@ if (!fixedLength) {
     so the laser always ends at the edge of the room*/
     //first, determine which quarter of the room we're aiming at so we know which walls to look for
     var quarter = direction div 90;
-    var targetX = 32;
-    if (quarter == 0 || quarter == 3) targetX = room_width - 32;
-    var targetY = 32;
-    if (quarter == 2 || quarter == 3) targetY = room_height - 32;
+    var targetX = 28;
+    if (quarter == 0 || quarter == 3) targetX = room_width - 28;
+    var targetY = 28;
+    if (quarter == 2 || quarter == 3) targetY = room_height - 28;
     //choose whichever distance to a wall ends up being the shorter one, but first make sure we're not dividing by zero
     var cosDir = dcos(direction);
     var sinDir = dsin(direction);
     if (cosDir == 0) image_xscale = sinDir*(y - targetY);
     else if (sinDir == 0) image_xscale = cosDir*(targetX - x);
     else image_xscale = min((targetX - x)/cosDir, (y - targetY)/sinDir);
-    //debug thingy
-    //draw_text(200, 100, string(quarter)+", "+string(targetX)+", "+string(targetY));
+    
+    
+    if (firing) //spawn wall glow where the laser ends 
+    {
+        var wallX = x + cosDir*image_xscale;
+        var wallY = y - sinDir*image_xscale;
+        //spawn sparks
+        if (counter mod 2 == 0)
+        {
+            part_particles_create_color(global.particleSystem, wallX, wallY,
+                global.pSpark, c_red, 1);
+        }
+        wallX = wallX div 32;
+        wallY = wallY div 32;
+        if (prevWallX &lt; 0) prevWallX = wallX;
+        if (prevWallY &lt; 0) prevWallY = wallY;
+        var changeX = wallX - prevWallX;
+        var changeY = wallY - prevWallY;
+        
+        //spawn glow on every tile the laser "touched" in the last frame (this could probably be done better)
+        if (changeX != 0 &amp;&amp; changeY != 0)
+        {
+            if (prevWallY == 0 || prevWallY == 18)
+            {
+                for (var ix = 1; ix &lt;= abs(changeX); ix++) scrWallGlowAt(prevWallX + ix*sign(changeX), prevWallY);
+                for (var iy = 1; iy &lt;= abs(changeY); iy++) scrWallGlowAt(wallX, prevWallY + iy*sign(changeY));
+            }
+            else
+            {
+                for (var ix = 1; ix &lt;= abs(changeX); ix++) scrWallGlowAt(prevWallX + ix*sign(changeX), wallY);
+                for (var iy = 1; iy &lt;= abs(changeY); iy++) scrWallGlowAt(prevWallX, prevWallY + iy*sign(changeY));
+            }    
+        }
+        else if (changeX != 0)
+            for (var ix = 1; ix &lt;= abs(changeX); ix++) scrWallGlowAt(prevWallX + ix*sign(changeX), prevWallY);
+        else if (changeY != 0)
+            for (var iy = 1; iy &lt;= abs(changeY); iy++) scrWallGlowAt(prevWallX, prevWallY + iy*sign(changeY));
+            
+        prevWallX = wallX;
+        prevWallY = wallY;
+        
+        
+    }
+    else
+    {
+        prevWallX = -1;
+        prevWallY = -1;
+    }
 }
 
 image_angle = direction;

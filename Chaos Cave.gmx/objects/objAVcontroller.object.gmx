@@ -36,7 +36,7 @@ with (objPlayer)
     hp = maxhp;
 }
 
-global.testTime = 7100;
+global.testTime = 3700;
 
 scrStopMusic();
 scrGetMusic();
