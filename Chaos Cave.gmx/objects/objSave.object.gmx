@@ -63,7 +63,30 @@ timer = 0;
           <argument>
             <kind>1</kind>
             <string>canSave = true;
-image_blend = global.blendColor;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+if (canSave) image_blend = global.blendColor;
 </string>
           </argument>
         </arguments>
@@ -142,7 +165,7 @@ if (canSave &amp;&amp; instance_exists(objPlayer) &amp;&amp; global.grav == grav
     if (!((objPlayer.x &lt; 0 || objPlayer.x &gt; room_width || objPlayer.y &lt; 0 || objPlayer.y &gt; room_height) &amp;&amp; global.edgeDeath))  //make sure the player isn't saving outside the room to prevent save locking
     {
         canSave = false;    //make it so that the player can't save again immediately
-        alarm[0] = 50;  //set alarm so the player can save again
+        alarm[0] = 40;  //set alarm so the player can save again
         image_blend = c_green;
         scrSaveGame(true);
     }

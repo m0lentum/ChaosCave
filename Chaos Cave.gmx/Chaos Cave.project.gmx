@@ -74,6 +74,10 @@
       <sprite>sprites\sprSpikeRight</sprite>
       <sprite>sprites\sprSpikeLeft</sprite>
       <sprite>sprites\sprSpikeDown</sprite>
+      <sprite>sprites\sprMiniUpGlow</sprite>
+      <sprite>sprites\sprMiniRightGlow</sprite>
+      <sprite>sprites\sprMiniDownGlow</sprite>
+      <sprite>sprites\sprMiniLeftGlow</sprite>
       <sprite>sprites\sprMiniUp</sprite>
       <sprite>sprites\sprMiniRight</sprite>
       <sprite>sprites\sprMiniLeft</sprite>
@@ -245,6 +249,7 @@
     </objects>
     <objects name="killers">
       <object>objects\objPlayerKiller</object>
+      <object>objects\objGlowingSpike</object>
       <object>objects\objSpikeUp</object>
       <object>objects\objSpikeRight</object>
       <object>objects\objSpikeLeft</object>
