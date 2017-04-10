@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>objCrack</parentName>
   <maskName>sprSaveMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,6 +31,15 @@ grav = 1;       //sets which player gravity this save works with
 
 if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
     instance_destroy();
+    
+baseAlpha = 0.2;
+currentAlpha = 0.2;
+image_blend = global.blendColor;
+image_alpha = currentAlpha;
+fadeIn = 0.001;
+fadeOut = 0
+lifetime = -1;
+timer = 0;
 </string>
           </argument>
         </arguments>
@@ -54,6 +63,7 @@ if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
           <argument>
             <kind>1</kind>
             <string>canSave = true;
+image_blend = global.blendColor;
 </string>
           </argument>
         </arguments>
@@ -76,7 +86,7 @@ if (global.difficulty &gt; 1)  //destroy if on a higher difficulty than hard
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_user(0);  //save the game
+            <string>//event_user(0);  //save the game
 </string>
           </argument>
         </arguments>
@@ -132,9 +142,8 @@ if (canSave &amp;&amp; instance_exists(objPlayer) &amp;&amp; global.grav == grav
     if (!((objPlayer.x &lt; 0 || objPlayer.x &gt; room_width || objPlayer.y &lt; 0 || objPlayer.y &gt; room_height) &amp;&amp; global.edgeDeath))  //make sure the player isn't saving outside the room to prevent save locking
     {
         canSave = false;    //make it so that the player can't save again immediately
-        alarm[0] = 30;  //set alarm so the player can save again
-        image_index = 1;
-        image_speed = 0.017;
+        alarm[0] = 50;  //set alarm so the player can save again
+        image_blend = c_green;
         scrSaveGame(true);
     }
 }

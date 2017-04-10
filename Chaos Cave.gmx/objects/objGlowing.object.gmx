@@ -30,6 +30,7 @@ event_inherited();
 blendColor = global.blendColor;
 glowAlpha = 0.3;
 glowSprite = 0;
+flickerIntensity = 0.3;
 
 //particle stuff
 pColor = global.blendColor;
@@ -94,7 +95,7 @@ if (global.particlesEnabled &amp;&amp; sparkDensity != 0 &amp;&amp; speed != 0 &
 draw_self();
 draw_set_blend_mode(bm_add);
 draw_sprite_ext(glowSprite, 0, x, y, image_xscale, image_yscale,
-    image_angle, blendColor, random_range(glowAlpha - glowAlpha*0.4, glowAlpha + glowAlpha*0.4));
+    image_angle, blendColor, random_range(glowAlpha - glowAlpha*flickerIntensity, glowAlpha + glowAlpha*flickerIntensity));
 draw_set_blend_mode(bm_normal);
 </string>
           </argument>

@@ -66,6 +66,10 @@
       <sprite>sprites\sprMovingPlatform</sprite>
     </sprites>
     <sprites name="killers">
+      <sprite>sprites\sprSpikeRightGlow</sprite>
+      <sprite>sprites\sprSpikeDownGlow</sprite>
+      <sprite>sprites\sprSpikeLeftGlow</sprite>
+      <sprite>sprites\sprSpikeUpGlow</sprite>
       <sprite>sprites\sprSpikeUp</sprite>
       <sprite>sprites\sprSpikeRight</sprite>
       <sprite>sprites\sprSpikeLeft</sprite>
@@ -367,6 +371,10 @@
     <room>rooms\rLevelSelect</room>
     <room>rooms\rAvoidance</room>
     <room>rooms\rEnd</room>
+    <rooms name="stage1">
+      <room>rooms\r1_1</room>
+      <room>rooms\r1_2</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
