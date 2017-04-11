@@ -377,8 +377,9 @@
     <room>rooms\rAvoidance</room>
     <room>rooms\rEnd</room>
     <rooms name="stage1">
-      <room>rooms\r1_1</room>
-      <room>rooms\r1_2</room>
+      <room>rooms\r1_01</room>
+      <room>rooms\r1_02</room>
+      <room>rooms\r1_03</room>
     </rooms>
   </rooms>
   <help>
