@@ -193,6 +193,7 @@
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdrWobble.shader</shader>
+    <shader type="GLSLES">shaders\sdrTwirl.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
