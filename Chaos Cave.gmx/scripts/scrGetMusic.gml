@@ -3,10 +3,7 @@
 var roomSong;
 
 switch (room)                       //determines which song to play
-{   
-    case rAvoidance:
-        roomSong = musBeautifulChaos;
-        break;                                //make sure to always put a break after setting the song
+{                                 //make sure to always put a break after setting the song
     default:                        //default option in case the room does not have a song set
         roomSong = -1;
         break;

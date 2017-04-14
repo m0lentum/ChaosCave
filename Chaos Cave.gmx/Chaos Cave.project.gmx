@@ -300,6 +300,7 @@
     <objects name="saves">
       <object>objects\objSaveMedium</object>
       <object>objects\objSave</object>
+      <object>objects\objSaveBoss</object>
       <object>objects\objSaveVHard</object>
       <object>objects\objSaveMediumFlip</object>
       <object>objects\objSaveFlip</object>
