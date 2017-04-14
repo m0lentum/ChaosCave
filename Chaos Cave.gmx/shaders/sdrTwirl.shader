@@ -39,7 +39,7 @@ void main()
     }
     else
     {
-        float rot = length(cuv)*3.*(sin(time/300.) + 5.) + time/20.;
+        float rot = length(cuv)*4.*(sin(time/100.) + 5.) + time/20.;
         vec2 ruv = vec2(cos(rot)*cuv.x - sin(rot)*cuv.y, sin(rot)*cuv.x + cos(rot)*cuv.y); //rotated UV coords
         ruv += center;
         gl_FragColor = texture2D( gm_BaseTexture, ruv );
