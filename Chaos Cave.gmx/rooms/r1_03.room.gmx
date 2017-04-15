@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>16777088</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>global.blendColor = $366af0;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -84,7 +84,6 @@
     <instance objName="objMiniDown" x="80" y="96" name="inst_13B7F47B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="80" y="112" name="inst_D35C995A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeLeft" x="160" y="64" name="inst_C5FB98F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeDown" x="96" y="32" name="inst_A66D379C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="32" y="32" name="inst_923DBF3A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="192" y="96" name="inst_382BD68E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="320" y="32" name="inst_3D685DE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -166,8 +165,8 @@
     <instance objName="objSpikeUp" x="112" y="384" name="inst_45170889" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeRight" x="144" y="416" name="inst_840D0947" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="112" y="448" name="inst_A30EBC97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeLeft" x="160" y="448" name="inst_0C65C9CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeRight" x="192" y="448" name="inst_18FD1F6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeLeft" x="176" y="448" name="inst_0C65C9CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeRight" x="208" y="448" name="inst_18FD1F6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="544" name="inst_09B518DA" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeUp" x="96" y="512" name="inst_8943DBDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeUp" x="128" y="512" name="inst_DBA0FA3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -175,8 +174,9 @@
     <instance objName="objSpikeUp" x="432" y="448" name="inst_D98D15F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="432" y="480" name="inst_117DC00B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrackController" x="720" y="544" name="inst_51FD950C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCrackController" x="736" y="544" name="inst_60B7D62F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCrackController" x="736" y="544" name="inst_60B7D62F" locked="0" code="timer = 75;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objOutsideRoomChanger" x="32" y="608" name="inst_67691820" locked="0" code="roomTo = r1_04;&#xA;smoothTransition = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMiniDown" x="96" y="32" name="inst_D3C71FC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bBlocks" x="768" y="576" w="32" h="32" xo="96" yo="64" id="10003068" name="inst_81C49613" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

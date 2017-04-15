@@ -80,6 +80,8 @@ smoothTransition = false;   //sets whether the player wraps around the screen fo
         
         room_goto(roomTo);
     }
+    
+    with (objCrack) instance_destroy();
 }
 </string>
           </argument>

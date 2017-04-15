@@ -51,7 +51,7 @@
             <string>///spawn cracks
 timer++;
 
-if (timer mod 150 == 1) 
+if (timer mod 150 == 1 &amp;&amp; instance_number(objCrack) &lt; 80) 
 {
     var startX;
     var startY;
