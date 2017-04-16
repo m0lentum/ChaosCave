@@ -375,6 +375,7 @@
     </rooms>
     <room>rooms\rTemplate</room>
     <room>rooms\rEmpty</room>
+    <room>rooms\r1_06</room>
     <room>rooms\rLevelSelect</room>
     <room>rooms\rAvoidance</room>
     <room>rooms\rEnd</room>
