@@ -8,7 +8,7 @@ global.debugNoDeath = false;    //enables god mode (toggle with Home key)
 global.debugInfJump = false;    //enables infinite jump (toggle with End key)
 global.debugShowHitbox = false; //enables showing the player's hitbox (toggle with Del key)
 
-global.roomCaptionDef = "I Wanna Conquer the Chaos Cave (avoidance test ver.)";  //sets default window caption (only works with the Professional version of Studio)
+global.roomCaptionDef = "I Wanna Conquer the Chaos Cave";  //sets default window caption (only works with the Professional version of Studio)
 global.roomCaptionLast = global.roomCaptionDef;
 window_set_caption(global.roomCaptionDef);
 
