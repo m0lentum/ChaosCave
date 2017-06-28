@@ -129,6 +129,7 @@
       <sprite>sprites\sprLaser</sprite>
       <sprite>sprites\sprLaserMask</sprite>
       <sprite>sprites\sprHeart</sprite>
+      <sprite>sprites\sprMoleYo</sprite>
       <sprites name="background">
         <sprite>sprites\sprCrack01</sprite>
         <sprite>sprites\sprBlockGlow</sprite>
@@ -354,6 +355,7 @@
         <object>objects\objLaser</object>
         <object>objects\objRockShard</object>
         <object>objects\objHeart</object>
+        <object>objects\objMoleYo</object>
       </objects>
       <objects name="background">
         <object>objects\objCrack</object>
