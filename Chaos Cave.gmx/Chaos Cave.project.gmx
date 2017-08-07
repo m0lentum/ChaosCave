@@ -17,6 +17,7 @@
       <sound>sound\sndCherry</sound>
       <sound>sound\sndGlass</sound>
       <sound>sound\sndSpikeTrap</sound>
+      <sound>sound\sndWhipCrack</sound>
     </sounds>
     <sounds name="music">
       <sound>sound\musBeautifulChaos</sound>
@@ -356,6 +357,7 @@
         <object>objects\objRockShard</object>
         <object>objects\objHeart</object>
         <object>objects\objMoleYo</object>
+        <object>objects\objCorpse</object>
       </objects>
       <objects name="background">
         <object>objects\objCrack</object>
