@@ -107,6 +107,8 @@ if (global.avTimer == 1)
         maxhp = 3;
         hp = maxhp;
     }
+    
+    global.avTimer = 8200; //end portal debug
 }
 else if (global.avTimer &lt; 80)
 {
@@ -119,7 +121,7 @@ else if (global.avTimer == 100) with (objText) instance_destroy();
 else if (global.avTimer == 9650) //end it
 {
     scrStopMusic();
-    with (instance_create(room_width/2 - 16, room_height - 4*32, objWarp))
+    with (instance_create(room_width/2 - 16, room_height - 4*32, objBossWarp))
     {
         roomTo = rEnd;
     }

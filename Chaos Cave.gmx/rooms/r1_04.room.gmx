@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>16777088</colour>
   <showcolour>-1</showcolour>
-  <code>global.blendColor = $366af0;</code>
+  <code>global.blendColor = make_color_rgb(14, 190, 169);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

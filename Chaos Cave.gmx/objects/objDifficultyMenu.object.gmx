@@ -87,6 +87,13 @@ for (var i = 0; i &lt; 3; i++)
                     boss[j,i] = false;
             }
             
+            for (var j = 0; j &lt; 8; j++)
+            {
+                secret[j,i] = ds_map_find_value(saveMap,"saveSecretItem["+string(j)+"]");
+                if (is_undefined(secret[j,i]))
+                    secret[j,i] = false;
+            }
+            
             clear[i] = ds_map_find_value(saveMap,"saveGameClear");
             if (is_undefined(clear[i]))
                 clear[i] = false;
@@ -124,6 +131,27 @@ for (var i = 0; i &lt; 3; i++)
     timeStr[i] += string(t div 10);
     t = t mod 10;
     timeStr[i] += string(floor(t));
+    
+    
+    
+    if (exists[i])
+    {
+        if(boss[0,i] || boss[1, i])
+        { 
+            with (instance_create(x+i*xSeperation+40,y+128+32, objBigRock)) 
+            { 
+                if (other.boss[0, i]) blendColor = make_color_rgb(64, 190, 14);
+                else blendColor = make_color_rgb(187, 190, 14);
+                image_xscale = 2;
+                image_yscale = 2;
+            }
+        }
+        if(secret[0, i])
+        {
+            with (instance_create(x+i*xSeperation+80,y+128, objSpikeUp)) {isGlobalColor = false; blendColor = make_color_rgb(64, 190, 14);}
+            with (instance_create(x+i*xSeperation+80,y+128+32, objSpikeDown)) {isGlobalColor = false; blendColor = make_color_rgb(64, 190, 14);}
+        }
+    }
 }
 </string>
           </argument>
@@ -358,15 +386,6 @@ else
         draw_set_font(fDefault24);
         
         if(clear[i]){draw_text(x+i*xSeperation+63,y+215,"Clear!!")}
-        
-        if(boss[0,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+0,y+128)}
-        if(boss[1,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+32,y+128)}
-        if(boss[2,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+64,y+128)}
-        if(boss[3,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+96,y+128)}
-        if(boss[4,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+0,y+160)}
-        if(boss[5,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+32,y+160)}
-        if(boss[6,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+64,y+160)}
-        if(boss[7,i]){draw_sprite(sprBossItem,-1,x+i*xSeperation+96,y+160)}
     }
     else
     {
