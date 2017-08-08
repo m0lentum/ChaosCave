@@ -342,7 +342,7 @@ else
             <kind>1</kind>
             <string>for(var i = 0; i &lt; 3; i += 1)
 {
-    draw_set_color(c_black)
+    draw_set_color($808080);
     draw_set_halign(fa_left)
     draw_set_font(fDefault30);
     
