@@ -62,6 +62,23 @@ ds_map_add(saveMap,"savePlayerX",global.savePlayerX);
 ds_map_add(saveMap,"savePlayerY",global.savePlayerY);
 ds_map_add(saveMap,"saveGrav",global.saveGrav);
 
+//save needle stuff
+if (global.saveNeedle && savePosition)
+{
+    global.needlePlayerX = global.savePlayerX;
+    global.needlePlayerY = global.savePlayerY;
+    global.needleRoom = global.saveRoom;
+    global.hasNeedleSave = true;
+    show_debug_message("Saving needle");
+}
+ds_map_add(saveMap,"hasNeedleSave",global.hasNeedleSave);
+ds_map_add(saveMap,"needleRoom",global.needleRoom);
+ds_map_add(saveMap,"needlePlayerX",global.needlePlayerX);
+ds_map_add(saveMap,"needlePlayerY",global.needlePlayerY);
+
+
+
+
 for (var i = 0; i < global.secretItemTotal; i++)
 {
     ds_map_add(saveMap,"saveSecretItem["+string(i)+"]",global.saveSecretItem[i]);

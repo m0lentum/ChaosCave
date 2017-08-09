@@ -11,7 +11,9 @@
   <colour>16777088</colour>
   <showcolour>-1</showcolour>
   <code>global.blendColor = $366af0;
-global.spikeAlpha = 0.2;</code>
+global.spikeAlpha = 0.2;
+
+global.saveNeedle = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

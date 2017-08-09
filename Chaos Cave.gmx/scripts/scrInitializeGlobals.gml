@@ -2,6 +2,9 @@
 global.avTimer = -1;
 global.wobbleTime = shader_get_uniform(sdrWobble, "time");
 global.blendColor = $366af0;
+global.hasNeedleSave = false;
+global.saveNeedle = false;
+global.loadNeedle = false;
 
 scrSetGlobalOptions();       //initialize global game options
 
@@ -13,8 +16,11 @@ global.death = 0;
 global.time = 0;
 global.timeMicro = 0;
 global.saveRoom = "";
+global.needleRoom = "";
 global.savePlayerX = 0;
 global.savePlayerY = 0;
+global.needlePlayerX = 0;
+global.needlePlayerY = 0;
 global.grav = 1;
 global.saveGrav = 1;
 

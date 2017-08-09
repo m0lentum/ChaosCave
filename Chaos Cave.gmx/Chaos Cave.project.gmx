@@ -360,6 +360,7 @@
         <object>objects\objCorpse</object>
         <object>objects\objRoomChangerFinal</object>
         <object>objects\objBossWarp</object>
+        <object>objects\objNeedleWarp</object>
       </objects>
       <objects name="background">
         <object>objects\objCrack</object>

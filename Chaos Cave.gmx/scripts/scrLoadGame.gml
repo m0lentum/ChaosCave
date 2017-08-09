@@ -38,6 +38,11 @@ if (loadFile)
         global.savePlayerY = ds_map_find_value(saveMap,"savePlayerY");
         global.saveGrav = ds_map_find_value(saveMap,"saveGrav");
         
+        global.hasNeedleSave = ds_map_find_value(saveMap,"hasNeedleSave");
+        global.needlePlayerX = ds_map_find_value(saveMap,"needlePlayerX");
+        global.needlePlayerY = ds_map_find_value(saveMap,"needlePlayerY");
+        global.needleRoom = ds_map_find_value(saveMap,"needleRoom");
+        
         if (is_string(global.saveRoom))   //check if the saved room loaded properly
         {
             if (!room_exists(asset_get_index(global.saveRoom)))  //check if the room index in the save is valid
@@ -117,6 +122,14 @@ for (var i = 0; i < global.bossItemTotal; i++)
 }
 
 global.gameClear = global.saveGameClear;
+
+if (global.loadNeedle)
+{
+    global.savePlayerX = global.needlePlayerX;
+    global.savePlayerY = global.needlePlayerY;
+    global.saveRoom = global.needleRoom;
+    show_debug_message("loading needle");
+}
 
 instance_create(global.savePlayerX,global.savePlayerY,objPlayer);
 
