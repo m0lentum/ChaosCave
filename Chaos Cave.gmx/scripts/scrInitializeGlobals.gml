@@ -5,6 +5,7 @@ global.blendColor = $366af0;
 global.hasNeedleSave = false;
 global.saveNeedle = false;
 global.loadNeedle = false;
+global.warpEnabled = false;
 
 scrSetGlobalOptions();       //initialize global game options
 

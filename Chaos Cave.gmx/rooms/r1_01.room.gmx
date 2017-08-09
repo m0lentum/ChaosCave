@@ -11,9 +11,10 @@
   <colour>16777088</colour>
   <showcolour>-1</showcolour>
   <code>global.blendColor = $366af0;
-global.spikeAlpha = 0.2;
 
-global.saveNeedle = true;</code>
+global.saveNeedle = true;
+
+global.warpEnabled = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -196,6 +197,8 @@ global.saveNeedle = true;</code>
     <instance objName="objMiniRight" x="704" y="416" name="inst_C8560CD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniRight" x="704" y="432" name="inst_BE36BC20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="480" name="inst_E4F56248" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeLeft" x="640" y="384" name="inst_4958378D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeRight" x="608" y="304" name="inst_442E7D89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bBlocks" x="768" y="576" w="32" h="32" xo="96" yo="64" id="10003068" name="inst_81C49613" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -306,12 +309,9 @@ global.saveNeedle = true;</code>
     <tile bgName="bBlocks" x="416" y="576" w="32" h="32" xo="32" yo="64" id="10003343" name="inst_2BB63226" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="416" y="544" w="32" h="32" xo="32" yo="32" id="10003344" name="inst_DBFA38F5" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="512" y="512" w="32" h="32" xo="32" yo="32" id="10003345" name="inst_B618BC44" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="672" y="384" w="32" h="32" xo="32" yo="32" id="10003346" name="inst_E403EEBA" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="672" y="352" w="32" h="32" xo="32" yo="32" id="10003347" name="inst_09EE2BF5" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="672" y="320" w="32" h="32" xo="32" yo="32" id="10003348" name="inst_0516316F" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="576" y="352" w="32" h="32" xo="32" yo="32" id="10003349" name="inst_6C0E37CD" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="576" y="320" w="32" h="32" xo="32" yo="32" id="10003350" name="inst_A8F83B77" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="576" y="288" w="32" h="32" xo="32" yo="32" id="10003351" name="inst_FBCD90DD" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="480" y="352" w="32" h="32" xo="32" yo="32" id="10003352" name="inst_C7C4BDA7" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="480" y="320" w="32" h="32" xo="32" yo="32" id="10003353" name="inst_D3C29644" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="384" y="352" w="32" h="32" xo="32" yo="32" id="10003354" name="inst_C3B939C9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -382,6 +382,9 @@ global.saveNeedle = true;</code>
     <tile bgName="bBlocks" x="160" y="128" w="32" h="32" xo="96" yo="96" id="10003881" name="inst_6E340E14" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="352" w="32" h="32" xo="96" yo="64" id="10003882" name="inst_F36F1787" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="384" w="32" h="32" xo="96" yo="64" id="10003883" name="inst_2A31AF07" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="672" y="384" w="32" h="32" xo="0" yo="64" id="10003939" name="inst_5E26E5C9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="576" y="320" w="32" h="32" xo="32" yo="64" id="10003940" name="inst_5DF3172A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="576" y="288" w="32" h="32" xo="32" yo="64" id="10003941" name="inst_EF018734" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

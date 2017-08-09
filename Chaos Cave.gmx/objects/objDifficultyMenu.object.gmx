@@ -142,6 +142,7 @@ for (var i = 0; i &lt; 3; i++)
             { 
                 if (other.boss[0, i]) blendColor = make_color_rgb(64, 190, 14);
                 else blendColor = make_color_rgb(187, 190, 14);
+                isGlobalColor = false;
                 image_xscale = 2;
                 image_yscale = 2;
             }

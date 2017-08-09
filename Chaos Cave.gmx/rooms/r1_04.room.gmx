@@ -12,7 +12,9 @@
   <showcolour>-1</showcolour>
   <code>global.blendColor = make_color_rgb(14, 190, 169);
 
-global.saveNeedle = true;</code>
+global.saveNeedle = true;
+
+global.warpEnabled = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

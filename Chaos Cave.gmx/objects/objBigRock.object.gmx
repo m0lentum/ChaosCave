@@ -33,6 +33,8 @@ glowAlpha = 0.15;
 grow = 0;
 
 timer = 0;
+
+isGlobalColor = true;
 </string>
           </argument>
         </arguments>
@@ -78,6 +80,10 @@ if (grow != 0)
         image_yscale = 0;
     }
 }
+
+
+if (isGlobalColor)
+    blendColor = global.blendColor;
 </string>
           </argument>
         </arguments>
