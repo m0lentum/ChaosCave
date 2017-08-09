@@ -74,6 +74,7 @@
     <instance objName="atkRing" x="256" y="352" name="inst_A10A7AFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkEllipse" x="320" y="352" name="inst_8D553E4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSaveBoss" x="384" y="544" name="inst_0E5D9D27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objColorCycleController" x="64" y="32" name="inst_F4B1DAFB" locked="0" code="active = false;&#xA;interval = 15;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bBlocks" x="32" y="576" w="32" h="32" xo="96" yo="32" id="10003153" name="inst_201F2F84" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

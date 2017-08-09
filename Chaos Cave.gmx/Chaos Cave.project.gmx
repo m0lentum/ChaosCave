@@ -326,6 +326,7 @@
     <objects name="custom">
       <objects name="controllers">
         <object>objects\objAVcontroller</object>
+        <object>objects\objColorCycleController</object>
         <object>objects\objAttack</object>
         <object>objects\atkTemplate</object>
         <object>objects\atkRain</object>

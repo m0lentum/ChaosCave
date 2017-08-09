@@ -2,7 +2,7 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -25,45 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///reset vars and start music
-running = false;
-global.avTimer = 0;
-global.blendColor = $366af0;
-
-global.testTime = 8100;
-
-scrStopMusic();
-
-with (objBigRock)
-{
-    image_xscale = 0;
-    image_yscale = 0;
-}
-
-with (instance_create(-10, -10, objText)) { alpha = 0; text = "Infinite jump"; }
+            <string>timer = 0;
+interval = 5;
+active = true;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -85,65 +50,16 @@ with (instance_create(-10, -10, objText)) { alpha = 0; text = "Infinite jump"; }
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!running) exit;
-
-global.avTimer++;
-
-//if player is dead, kill all attacks
-if (!instance_exists(objPlayer))
+            <string>if (active)
 {
-    with (objAttack) instance_destroy();
-    instance_destroy();
-}
-
-if (global.avTimer == 1)
-{
-    scrStopMusic();
-    scrPlayMusic(musBeautifulChaos, false);
+    timer++;
     
-    with (objPlayer)
+    if (timer mod interval == 0)
     {
-        infjump = true;
-        maxhp = 3;
-        hp = maxhp;
-    }
-    
-    with (objColorCycleController) active = true;
-    
-    //global.avTimer = 8200; //end portal debug
-}
-else if (global.avTimer &lt; 80)
-{
-    with (objText) { x = objPlayer.x; y = objPlayer.y - 48; }
-    
-    if (global.avTimer &lt; 40) with (objText) alpha += 1/50;
-    else with (objText) alpha -= 1/50;
-}
-else if (global.avTimer == 100) with (objText) instance_destroy();
-else if (global.avTimer == 9650) //end it
-{
-    scrStopMusic();
-    with (instance_create(room_width/2 - 16, room_height - 4*32, objBossWarp))
-    {
-        roomTo = rEnd;
+        global.blendColor = make_color_hsv(color_get_hue(global.blendColor)+1,
+            color_get_saturation(global.blendColor), color_get_value(global.blendColor));
     }
 }
-
-//start and stop attacks
-with (objAttack)
-{
-    if (global.avTimer == startTime)
-    {
-        running = true;
-    }
-    else if (global.avTimer == endTime)
-    {
-        instance_destroy();
-    }
-}
-
-
-with (objBigRock) blendColor = global.blendColor;
 </string>
           </argument>
         </arguments>
