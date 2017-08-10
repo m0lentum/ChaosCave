@@ -395,6 +395,7 @@
       <room>rooms\r1_05</room>
       <room>rooms\r1_06</room>
       <room>rooms\r1_07</room>
+      <room>rooms\rf_07</room>
     </rooms>
     <rooms name="finalStage">
       <room>rooms\rf_01</room>
