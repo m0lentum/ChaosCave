@@ -14,7 +14,7 @@
 
 global.saveNeedle = false;
 
-global.saveGameClear = true;</code>
+global.gameClear = true;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
