@@ -21,6 +21,8 @@
     </sounds>
     <sounds name="music">
       <sound>sound\musBeautifulChaos</sound>
+      <sound>sound\musBossMode</sound>
+      <sound>sound\musTyphonSystem</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">

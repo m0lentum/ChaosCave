@@ -1,11 +1,15 @@
 This is an I Wanna Be the Guy fangame made by MoleTrooper, based on I Wanna Be the 
-Studio Engine YoYoYo Edition v1.50. It is planned to contain a few screens of needle
-and an avoidance boss.
+Studio Engine YoYoYo Edition v1.50. It contains two needle stages of 7 rooms each,
+the second one being a harder remix of the first, and an avoidance boss.
 
-Contact me:
+All music in the game is made by DuttonsaysHi - https://www.youtube.com/channel/UCPHbhkTB1c-yWqP3Si38lbA
+Stage 1 / menu: The Typhon System - https://www.youtube.com/watch?v=ENJjXJDURqQ
+Boss: Beautiful Chaos - https://www.youtube.com/watch?v=-qIam-gwPn8
+Stage 2: B055 Mode - https://www.youtube.com/watch?v=FVMcjIGYT2g
+
+Special thanks to Wolfiexe and CakeSauc3 for testing and feedback, as well as
+the entire WannaVis community for being generally awesome.
+
+Contacts:
 Discord: MoleTrooper#6910
 Twitter: @moletrooper
-
-You can get the GMS project on GitHub here: https://github.com/MoleTrooper/ChaosCave
-All sprites aside from what comes with the engine are custom made. Please ask me
-for permission if you would like to use them.
