@@ -40,7 +40,6 @@
       <sprite>sprites\sprPlayerFall</sprite>
       <sprite>sprites\sprPlayerRunning</sprite>
       <sprite>sprites\sprPlayerSliding</sprite>
-      <sprite>sprites\sprBow</sprite>
       <sprite>sprites\sprBullet</sprite>
       <sprite>sprites\sprBlood</sprite>
       <sprite>sprites\sprGameOver</sprite>
@@ -48,25 +47,6 @@
     <sprites name="blocks">
       <sprite>sprites\sprBlockMask</sprite>
       <sprite>sprites\sprMiniBlockMask</sprite>
-      <sprite>sprites\sprSlipBlockMask</sprite>
-      <sprite>sprites\sprKillerBlock</sprite>
-      <sprite>sprites\sprBlock</sprite>
-      <sprite>sprites\sprBlock2</sprite>
-      <sprite>sprites\sprSlideBlock</sprite>
-      <sprite>sprites\sprSlideBlockR</sprite>
-      <sprite>sprites\sprSlideBlockL</sprite>
-      <sprite>sprites\sprSaveBlocker</sprite>
-    </sprites>
-    <sprites name="slopes">
-      <sprite>sprites\sprSlopeBlock</sprite>
-      <sprite>sprites\sprSlopeDownLeft</sprite>
-      <sprite>sprites\sprSlopeDownRight</sprite>
-      <sprite>sprites\sprSlopeUpLeft</sprite>
-      <sprite>sprites\sprSlopeUpRight</sprite>
-    </sprites>
-    <sprites name="platforms">
-      <sprite>sprites\sprPlatform</sprite>
-      <sprite>sprites\sprMovingPlatform</sprite>
     </sprites>
     <sprites name="killers">
       <sprite>sprites\sprSpikeRightGlow</sprite>
@@ -85,42 +65,16 @@
       <sprite>sprites\sprMiniRight</sprite>
       <sprite>sprites\sprMiniLeft</sprite>
       <sprite>sprites\sprMiniDown</sprite>
-      <sprite>sprites\sprCherry</sprite>
-      <sprite>sprites\sprMiku</sprite>
-      <sprite>sprites\sprCherryWhite</sprite>
-    </sprites>
-    <sprites name="misc">
-      <sprite>sprites\sprWater</sprite>
-      <sprite>sprites\sprWalljumpR</sprite>
-      <sprite>sprites\sprWalljumpL</sprite>
-      <sprite>sprites\sprJumpRefresher</sprite>
-      <sprite>sprites\sprSign</sprite>
-      <sprite>sprites\sprGravityUp</sprite>
-      <sprite>sprites\sprGravityDown</sprite>
     </sprites>
     <sprites name="triggers">
       <sprite>sprites\sprTriggerMask</sprite>
-      <sprite>sprites\sprButton</sprite>
-      <sprite>sprites\sprSpikeTriggerDown</sprite>
-      <sprite>sprites\sprSpikeTriggerLeft</sprite>
-      <sprite>sprites\sprSpikeTriggerRight</sprite>
-      <sprite>sprites\sprSpikeTriggerUp</sprite>
     </sprites>
     <sprites name="saves">
       <sprite>sprites\sprSaveMask</sprite>
-      <sprite>sprites\sprSaveMedium</sprite>
       <sprite>sprites\sprSave</sprite>
-      <sprite>sprites\sprSaveVHard</sprite>
-      <sprite>sprites\sprSaveMediumFlip</sprite>
-      <sprite>sprites\sprSaveFlip</sprite>
-      <sprite>sprites\sprSaveVHardFlip</sprite>
     </sprites>
     <sprites name="warps">
       <sprite>sprites\sprWarp</sprite>
-    </sprites>
-    <sprites name="items">
-      <sprite>sprites\sprSecretItem</sprite>
-      <sprite>sprites\sprBossItem</sprite>
     </sprites>
     <sprites name="custom">
       <sprite>sprites\sprStoneBullet</sprite>
