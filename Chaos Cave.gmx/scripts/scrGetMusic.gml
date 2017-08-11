@@ -10,7 +10,7 @@ switch (room)                       //determines which song to play
 }
 
 if (room == rMenu || room == rOptions || room == rLevelSelect || room == r1_01 || room == r1_02 
-    || room == r1_03 || room == r1_04 || room == r1_05 || room == r1_06 || room == r1_07)
+    || room == rTitle || room == r1_03 || room == r1_04 || room == r1_05 || room == r1_06 || room == r1_07)
     roomSong = musTyphonSystem;
 else if (room == rf_01 || room == rf_02 || room == rf_03 || room == rf_04
     || room == rf_05 || room == rf_06 || room == rf_07)

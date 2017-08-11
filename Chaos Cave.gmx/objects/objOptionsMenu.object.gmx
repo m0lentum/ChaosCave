@@ -181,7 +181,7 @@ if (select == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_black);
+            <string>draw_set_color($808080);
 draw_set_font(fDefault30);
 draw_set_halign(fa_left);
 
