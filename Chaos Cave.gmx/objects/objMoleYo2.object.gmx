@@ -3,7 +3,7 @@
   <spriteName>sprMoleYo</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>101</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,10 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>image_xscale = 0;
-
 hasTriggered = false;
-
 turnSpeed = 0;
+timer = 0;
+isFirst = true;
+hasHit = false;
 </string>
           </argument>
         </arguments>
@@ -58,27 +59,103 @@ if (turnSpeed &gt; 0)
 {
     if (!hasTriggered)
     {
-        //play slap sound, kill player and spawn flying corpse
         audio_play_sound(sndWhipCrack, 0, false);
-        
-        with (objPlayer) 
-        {
-            instance_create(x, y, objCorpse);
-            instance_destroy();
-        }  
-        //copied from scrKillPlayer
-        instance_create(0,0,objGameOver);
-        global.death += 1; //increment deaths
-        scrSaveGame(false); //save death/time
-        
-        
-        global.firstTrapFound = true;
+        hasTriggered = true;
     }
     
     if (image_xscale &gt; -1) image_xscale -= turnSpeed;
     
-    hasTriggered = true;
+    timer++;
+    
+    if (isFirst)
+    {
+        if (timer == 30)
+        {
+            with (instance_create(x - 30, y - 10, objText))
+            {
+                text = "oh";
+                lifetime = 50;
+                fade = 1;
+            }
+        }
+        else if (timer == 100)
+        {
+            with (instance_create(x - 40, y - 10, objText))
+            {
+                text = "one sec";
+                lifetime = 50;
+                fade = 1;
+            }
+        }
+        else if (timer == 150)
+        {
+            hspeed = 1;
+        }
+        else if (timer == 220)
+        {
+            with (instance_create(768, 240, objMoleYo2))
+            {
+                isFirst = false;
+                turnSpeed = 0.25;
+            }
+            
+            instance_destroy();
+        }
+    }
+    else if (!hasHit &amp;&amp; instance_exists(objPlayer)) //second moleYo, only goes away if misses
+    {
+        if (timer == 50)
+        {
+            with (instance_create(x - 40, y - 10, objText))
+            {
+                text = "dammit";
+                lifetime = 50;
+                fade = 1;
+            }
+        }
+        else if (timer == 100)
+        {
+            hspeed = 1;
+        }
+        else if (timer == 120)
+        {
+            instance_destroy();
+        }
+    }
 }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hasHit = true;
+with (objPlayer) 
+{
+    instance_create(x, y, objCorpse);
+    instance_destroy();
+}  
+//copied from scrKillPlayer
+instance_create(0,0,objGameOver);
+global.death += 1; //increment deaths
+scrSaveGame(false); //save death/time
 </string>
           </argument>
         </arguments>

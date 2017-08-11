@@ -203,7 +203,7 @@ global.warpEnabled = true;</code>
     <instance objName="objMiniUp" x="400" y="368" name="inst_8C882ED6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeUp" x="160" y="432" name="inst_17FBF681" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrackController" x="352" y="304" name="inst_A58B7451" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCrackController" x="368" y="304" name="inst_5A8C9DB2" locked="0" code="timer = 75;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCrackController" x="368" y="304" name="inst_5A8C9DB2" locked="0" code="timer = 75;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniBlock" x="176" y="208" name="inst_BE9CF093" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniBlock" x="224" y="96" name="inst_25CD28E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniBlock" x="288" y="48" name="inst_AFE66F48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

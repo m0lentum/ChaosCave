@@ -161,7 +161,7 @@ global.warpEnabled = true;</code>
     <instance objName="objMiniLeft" x="752" y="192" name="inst_A643536A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeLeft" x="704" y="128" name="inst_05A4C791" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrackController" x="736" y="32" name="inst_988E5DBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCrackController" x="752" y="32" name="inst_2FA309D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCrackController" x="752" y="32" name="inst_2FA309D4" locked="0" code="timer = 75;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFreeTrigger" x="752" y="96" name="inst_DD659E9B" locked="0" code="trg = 1;&#xA;" scaleX="0.516129016876221" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMoleYo" x="768" y="96" name="inst_5FC8CF42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniRight" x="528" y="192" name="inst_ECE75D7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -199,8 +199,6 @@ global.warpEnabled = true;</code>
     <tile bgName="bBlocks" x="0" y="64" w="32" h="32" xo="0" yo="64" id="10003110" name="inst_BA3837EC" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="0" y="32" w="32" h="32" xo="0" yo="64" id="10003111" name="inst_DA1D2F2D" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="160" w="32" h="32" xo="32" yo="64" id="10003116" name="inst_30B7E5A6" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="768" y="192" w="32" h="32" xo="32" yo="64" id="10003117" name="inst_88CC12EB" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="768" y="224" w="32" h="32" xo="32" yo="64" id="10003118" name="inst_B6F231DA" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="352" w="32" h="32" xo="32" yo="64" id="10003122" name="inst_B0A123F5" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="384" w="32" h="32" xo="32" yo="64" id="10003123" name="inst_EC5D1FBF" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="416" w="32" h="32" xo="32" yo="64" id="10003124" name="inst_FC01D561" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -275,6 +273,9 @@ global.warpEnabled = true;</code>
     <tile bgName="bBlocks" x="768" y="64" w="32" h="32" xo="32" yo="64" id="10003857" name="inst_01AE9118" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="32" w="32" h="32" xo="32" yo="64" id="10003858" name="inst_2B041408" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="768" y="0" w="32" h="32" xo="96" yo="64" id="10003859" name="inst_22638828" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="768" y="192" w="32" h="32" xo="96" yo="64" id="10004265" name="inst_E083B486" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="768" y="240" w="32" h="32" xo="32" yo="64" id="10004266" name="inst_8B06F79B" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="768" y="224" w="32" h="32" xo="96" yo="64" id="10004267" name="inst_6887951B" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

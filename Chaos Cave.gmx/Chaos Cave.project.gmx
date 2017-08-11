@@ -358,6 +358,7 @@
         <object>objects\objRockShard</object>
         <object>objects\objHeart</object>
         <object>objects\objMoleYo</object>
+        <object>objects\objMoleYo2</object>
         <object>objects\objCorpse</object>
         <object>objects\objRoomChangerFinal</object>
         <object>objects\objBossWarp</object>
@@ -387,6 +388,7 @@
     <room>rooms\rAvoidance</room>
     <room>rooms\rEnd</room>
     <room>rooms\rBetterEnd</room>
+    <room>rooms\rTrueEnd</room>
     <rooms name="stage1">
       <room>rooms\r1_01</room>
       <room>rooms\r1_02</room>
@@ -395,7 +397,6 @@
       <room>rooms\r1_05</room>
       <room>rooms\r1_06</room>
       <room>rooms\r1_07</room>
-      <room>rooms\rf_07</room>
     </rooms>
     <rooms name="finalStage">
       <room>rooms\rf_01</room>
@@ -404,6 +405,7 @@
       <room>rooms\rf_04</room>
       <room>rooms\rf_05</room>
       <room>rooms\rf_06</room>
+      <room>rooms\rf_07</room>
     </rooms>
   </rooms>
   <help>
