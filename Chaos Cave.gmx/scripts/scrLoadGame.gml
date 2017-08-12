@@ -43,6 +43,7 @@ if (loadFile)
         global.needlePlayerY = ds_map_find_value(saveMap,"needlePlayerY");
         global.needleRoom = ds_map_find_value(saveMap,"needleRoom");
         global.firstTrapFound = ds_map_find_value(saveMap,"firstTrapFound");
+        global.endRoomVisited = ds_map_find_value(saveMap,"endRoomVisited");
         
         if (is_string(global.saveRoom))   //check if the saved room loaded properly
         {

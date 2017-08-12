@@ -123,10 +123,7 @@ else if (global.avTimer == 100) with (objText) instance_destroy();
 else if (global.avTimer == 9650) //end it
 {
     scrStopMusic();
-    with (instance_create(room_width/2 - 16, room_height - 4*32, objBossWarp))
-    {
-        roomTo = rEnd;
-    }
+    instance_create(room_width/2 - 16, room_height - 4*32, objBossWarp);
 }
 
 //start and stop attacks

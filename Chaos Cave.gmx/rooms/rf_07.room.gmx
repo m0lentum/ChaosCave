@@ -243,7 +243,7 @@ global.warpEnabled = false;</code>
     <instance objName="objSpikeDown" x="456" y="32" name="inst_817A19B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniLeft" x="320" y="224" name="inst_C1A92E48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniRight" x="336" y="224" name="inst_D9309B19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBlockGlow" x="784" y="256" name="inst_CE7D4BB0" locked="0" code="if (!global.firstTrapFound) instance_destroy();&#xA;&#xA;fadeOut = 0;&#xA;var alpha = 0.15;&#xA;currentAlpha = alpha;&#xA;image_alpha = alpha;&#xA;baseAlpha = alpha;&#xA;image_blend = c_red;&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="180"/>
+    <instance objName="objBlockGlow" x="784" y="112" name="inst_CE7D4BB0" locked="0" code="if (!global.firstTrapFound) instance_destroy();&#xA;&#xA;fadeOut = 0;&#xA;var alpha = 0.15;&#xA;currentAlpha = alpha;&#xA;image_alpha = alpha;&#xA;baseAlpha = alpha;&#xA;image_blend = c_red;&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="180"/>
   </instances>
   <tiles>
     <tile bgName="bBlocks" x="160" y="576" w="32" h="32" xo="96" yo="32" id="10003076" name="inst_97000CB9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

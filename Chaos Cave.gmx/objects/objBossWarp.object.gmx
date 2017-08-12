@@ -8,6 +8,30 @@
   <parentName>objWarp</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+roomTo = rLevelSelect;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objPlayer">
       <action>
         <libid>1</libid>
@@ -30,10 +54,11 @@
     global.bossItem[1] = true; //item for beating boss
     if (hp == maxhp)
     {
-        other.roomTo = rBetterEnd;
         global.bossItem[0] = true; //item for no death
     }
 }
+
+if (global.secretItem[0] &amp;&amp; !global.endRoomVisited) roomTo = rEnd;
 
 event_inherited();
 </string>

@@ -77,6 +77,7 @@ ds_map_add(saveMap,"needlePlayerX",global.needlePlayerX);
 ds_map_add(saveMap,"needlePlayerY",global.needlePlayerY);
 
 ds_map_add(saveMap,"firstTrapFound",global.firstTrapFound);
+ds_map_add(saveMap,"endRoomVisited",global.endRoomVisited);
 
 
 for (var i = 0; i < global.secretItemTotal; i++)

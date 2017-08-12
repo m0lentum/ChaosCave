@@ -7,6 +7,7 @@ global.saveNeedle = false;
 global.loadNeedle = false;
 global.warpEnabled = false;
 global.firstTrapFound = false;
+global.endRoomVisited = false;
 
 scrSetGlobalOptions();       //initialize global game options
 
