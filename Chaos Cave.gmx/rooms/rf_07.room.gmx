@@ -101,9 +101,9 @@ global.warpEnabled = false;</code>
     <instance objName="objSpikeUp" x="304" y="464" name="inst_7DFA8ECC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="304" y="496" name="inst_6A5DE6A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="240" y="480" name="inst_638FB63B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="496" y="176" name="inst_4DEF734B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="496" y="160" name="inst_4DEF734B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="736" y="128" name="inst_3F29E3DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeLeft" x="608" y="208" name="inst_4860053E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeLeft" x="464" y="160" name="inst_4860053E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniRight" x="448" y="448" name="inst_6589A7CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniLeft" x="416" y="448" name="inst_54B2A1AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeUp" x="496" y="384" name="inst_8943AD18" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -112,12 +112,12 @@ global.warpEnabled = false;</code>
     <instance objName="objBlock" x="496" y="304" name="inst_512DBFCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeLeft" x="464" y="304" name="inst_51CD8222" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="640" y="240" name="inst_0672FD01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeRight" x="672" y="208" name="inst_8CC875FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeRight" x="528" y="160" name="inst_8CC875FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeLeft" x="736" y="208" name="inst_DE520869" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="736" y="336" name="inst_9F7E466C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeRight" x="528" y="304" name="inst_0A264E72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="496" y="336" name="inst_9BB107A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeDown" x="496" y="208" name="inst_663700AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeDown" x="496" y="192" name="inst_663700AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeUp" x="224" y="240" name="inst_CC331555" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="192" y="288" name="inst_18F6E2C4" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="240" y="160" name="inst_16650696" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -132,8 +132,8 @@ global.warpEnabled = false;</code>
     <instance objName="objSpikeUp" x="192" y="64" name="inst_8A18D6FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="240" y="208" name="inst_EC20B2AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="208" y="272" name="inst_6AA21498" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMiniRight" x="336" y="224" name="inst_9E34FF83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMiniLeft" x="320" y="224" name="inst_BC2D2120" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMiniRight" x="312" y="144" name="inst_9E34FF83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMiniLeft" x="296" y="144" name="inst_BC2D2120" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniLeft" x="272" y="352" name="inst_FBA4723F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniRight" x="288" y="352" name="inst_6CB08C6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="304" y="288" name="inst_7B8E62F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -142,11 +142,7 @@ global.warpEnabled = false;</code>
     <instance objName="objSpikeLeft" x="704" y="128" name="inst_05A4C791" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrackController" x="736" y="32" name="inst_988E5DBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrackController" x="752" y="32" name="inst_2FA309D4" locked="0" code="timer = 75;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFreeTrigger" x="752" y="240" name="inst_DD659E9B" locked="0" code="if (!global.firstTrapFound) instance_destroy();&#xA;&#xA;trg = 1;&#xA;" scaleX="0.516129016876221" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMiniRight" x="528" y="192" name="inst_ECE75D7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMiniRight" x="528" y="176" name="inst_1BE70C38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMiniLeft" x="480" y="192" name="inst_5D934584" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMiniLeft" x="480" y="176" name="inst_99A36A5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFreeTrigger" x="752" y="240" name="inst_DD659E9B" locked="0" code="if (!global.firstTrapFound) instance_destroy();&#xA;&#xA;trg = 1;" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objColorCycleController" x="704" y="32" name="inst_84F5F085" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="192" y="560" name="inst_6CEACAE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="208" y="560" name="inst_3B71B95A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -202,7 +198,6 @@ global.warpEnabled = false;</code>
     <instance objName="objSpikeUp" x="608" y="64" name="inst_C9333CA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="608" y="96" name="inst_5B3F4EAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="192" y="32" name="inst_93421FD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeDown" x="496" y="32" name="inst_D3F3C00B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="352" y="32" name="inst_04C9DDE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="352" y="32" name="inst_F1C8FE5B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniDown" x="392" y="208" name="inst_94DE8FBF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -211,11 +206,10 @@ global.warpEnabled = false;</code>
     <instance objName="objMiniDown" x="112" y="64" name="inst_05AAF97F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="112" y="48" name="inst_0BFE47CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniDown" x="160" y="32" name="inst_AE9A4500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMiniDown" x="464" y="32" name="inst_E4954308" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniDown" x="112" y="32" name="inst_693CE99C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="608" y="32" name="inst_B8DA279F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeUp" x="496" y="96" name="inst_E6C9CC81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeDown" x="496" y="128" name="inst_D2238CEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeUp" x="496" y="80" name="inst_E6C9CC81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeDown" x="496" y="112" name="inst_D2238CEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniUp" x="656" y="64" name="inst_7BDA73A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniDown" x="656" y="80" name="inst_8DEE30C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniDown" x="256" y="32" name="inst_21BE6949" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -243,6 +237,13 @@ global.warpEnabled = false;</code>
     <instance objName="objMiniRight" x="416" y="504" name="inst_8448BE26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeLeft" x="320" y="432" name="inst_69FD0C5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeRight" x="352" y="432" name="inst_D3E35325" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeLeft" x="608" y="208" name="inst_3F1FE145" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeRight" x="672" y="208" name="inst_0271A34A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMiniDown" x="504" y="32" name="inst_A26D856A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeDown" x="456" y="32" name="inst_817A19B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMiniLeft" x="320" y="224" name="inst_C1A92E48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMiniRight" x="336" y="224" name="inst_D9309B19" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlockGlow" x="784" y="256" name="inst_CE7D4BB0" locked="0" code="if (!global.firstTrapFound) instance_destroy();&#xA;&#xA;fadeOut = 0;&#xA;var alpha = 0.15;&#xA;currentAlpha = alpha;&#xA;image_alpha = alpha;&#xA;baseAlpha = alpha;&#xA;image_blend = c_red;&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="180"/>
   </instances>
   <tiles>
     <tile bgName="bBlocks" x="160" y="576" w="32" h="32" xo="96" yo="32" id="10003076" name="inst_97000CB9" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -280,7 +281,6 @@ global.warpEnabled = false;</code>
     <tile bgName="bBlocks" x="320" y="0" w="32" h="32" xo="64" yo="64" id="10003138" name="inst_90AFAB60" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="384" y="0" w="32" h="32" xo="64" yo="64" id="10003140" name="inst_BFB69B50" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="416" y="0" w="32" h="32" xo="64" yo="64" id="10003141" name="inst_ADE7A37A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="448" y="0" w="32" h="32" xo="64" yo="64" id="10003142" name="inst_7711821A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="544" y="0" w="32" h="32" xo="64" yo="64" id="10003145" name="inst_4D775B33" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="576" y="0" w="32" h="32" xo="64" yo="64" id="10003146" name="inst_A86850A0" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="640" y="0" w="32" h="32" xo="64" yo="64" id="10003148" name="inst_C855F687" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -334,7 +334,7 @@ global.warpEnabled = false;</code>
     <tile bgName="bBlocks" x="768" y="224" w="32" h="32" xo="96" yo="64" id="10004293" name="inst_8A3D0DEC" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="640" y="208" w="32" h="32" xo="96" yo="64" id="10004294" name="inst_C78F4BC2" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="496" y="304" w="32" h="32" xo="96" yo="32" id="10004295" name="inst_0E9EB6B4" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="496" y="176" w="32" h="32" xo="96" yo="32" id="10004296" name="inst_424C9922" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="496" y="160" w="32" h="32" xo="96" yo="32" id="10004296" name="inst_424C9922" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="352" y="0" w="32" h="32" xo="96" yo="64" id="10004297" name="inst_8B216F36" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="192" y="0" w="32" h="32" xo="96" yo="64" id="10004298" name="inst_BF211372" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="480" y="0" w="32" h="32" xo="96" yo="64" id="10004299" name="inst_C5106172" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -348,6 +348,7 @@ global.warpEnabled = false;</code>
     <tile bgName="bBlocks" x="288" y="576" w="32" h="32" xo="96" yo="32" id="10004308" name="inst_C0164D35" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="320" y="576" w="32" h="32" xo="96" yo="32" id="10004309" name="inst_7B2F0105" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="352" y="576" w="32" h="32" xo="0" yo="96" id="10004311" name="inst_359EE179" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="448" y="0" w="32" h="32" xo="96" yo="64" id="10004486" name="inst_0EA1803C" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

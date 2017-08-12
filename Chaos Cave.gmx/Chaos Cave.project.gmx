@@ -92,6 +92,7 @@
         <sprite>sprites\sprBlockGlow</sprite>
         <sprite>sprites\sprExclamation</sprite>
         <sprite>sprites\sprTitle</sprite>
+        <sprite>sprites\sprSecretGlow</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -328,6 +329,7 @@
         <object>objects\objTitle</object>
         <object>objects\objTelegraph</object>
         <object>objects\objText</object>
+        <object>objects\objSecretGlow</object>
       </objects>
     </objects>
   </objects>
