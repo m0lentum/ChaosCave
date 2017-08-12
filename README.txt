@@ -1,9 +1,9 @@
 This is an I Wanna Be the Guy fangame made by MoleTrooper, based on I Wanna Be the 
 Studio Engine YoYoYo Edition v1.50. It contains two needle stages of 7 rooms each,
 the second one being a harder remix of the first, and an avoidance boss.
-The first needle stage and the boss comprise the "normal mode" of the game.
+The first needle stage and the boss are the "normal mode" of the game.
 Clearing the boss without getting hit and the second needle stage unlocked
-thereafter create an additional "hard mode".
+thereafter form an additional "hard mode".
 
 All music in the game is made by DuttonsaysHi - https://www.youtube.com/channel/UCPHbhkTB1c-yWqP3Si38lbA
 Stage 1 / menu: The Typhon System - https://www.youtube.com/watch?v=ENJjXJDURqQ
