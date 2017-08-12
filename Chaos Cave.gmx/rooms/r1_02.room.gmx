@@ -3,7 +3,7 @@
   <caption></caption>
   <width>800</width>
   <height>608</height>
-  <vsnap>16</vsnap>
+  <vsnap>8</vsnap>
   <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>50</speed>
@@ -153,9 +153,9 @@ global.warpEnabled = true;</code>
     <instance objName="objMiniLeft" x="624" y="128" name="inst_5897130E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMiniLeft" x="624" y="144" name="inst_531888AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="96" y="128" name="inst_FB134D95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeUp" x="96" y="352" name="inst_8D239593" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBlock" x="96" y="384" name="inst_99EB3C3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpikeLeft" x="64" y="384" name="inst_D1743E1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeUp" x="96" y="344" name="inst_8D239593" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="96" y="376" name="inst_99EB3C3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpikeLeft" x="64" y="376" name="inst_D1743E1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeRight" x="32" y="416" name="inst_B43CB645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="128" y="464" name="inst_FD0C5182" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="224" y="96" name="inst_2A635DF4" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
@@ -318,7 +318,7 @@ global.warpEnabled = true;</code>
     <tile bgName="bBlocks" x="288" y="576" w="32" h="32" xo="32" yo="96" id="10003499" name="inst_462AF9CD" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="320" y="576" w="32" h="32" xo="96" yo="64" id="10003500" name="inst_51C1C17A" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="128" y="464" w="32" h="32" xo="32" yo="64" id="10003501" name="inst_58689B31" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bBlocks" x="96" y="384" w="32" h="32" xo="96" yo="96" id="10003502" name="inst_AA67FECD" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bBlocks" x="96" y="376" w="32" h="32" xo="96" yo="96" id="10003502" name="inst_AA67FECD" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="0" y="544" w="32" h="32" xo="96" yo="64" id="10003503" name="inst_ECACB965" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="0" y="576" w="32" h="32" xo="96" yo="64" id="10003504" name="inst_E8C30BB4" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bBlocks" x="32" y="576" w="32" h="32" xo="96" yo="64" id="10003505" name="inst_EAD4C2DA" depth="100" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
