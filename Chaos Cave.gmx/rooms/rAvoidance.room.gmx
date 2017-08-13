@@ -62,10 +62,10 @@ global.saveNeedle = false;</code>
     <instance objName="objBlock" x="32" y="0" name="inst_86D0E69F" locked="0" code="" scaleX="23" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkBursts" x="288" y="352" name="inst_73974D50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkRainEnd" x="64" y="352" name="inst_78B2D671" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSaveBlocker" x="-96" y="-192" name="inst_A1CFC463" locked="0" code="" scaleX="1" scaleY="30" colour="4294967295" rotation="0"/>
-    <instance objName="objSaveBlocker" x="-160" y="672" name="inst_FDC79B33" locked="0" code="" scaleX="34" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSaveBlocker" x="-160" y="-96" name="inst_42567B8E" locked="0" code="" scaleX="34" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSaveBlocker" x="864" y="-192" name="inst_CE35F0A4" locked="0" code="" scaleX="1" scaleY="30" colour="4294967295" rotation="0"/>
+    <instance objName="objSaveBlocker" x="-128" y="-192" name="inst_A1CFC463" locked="0" code="" scaleX="2" scaleY="31" colour="4294967295" rotation="0"/>
+    <instance objName="objSaveBlocker" x="-192" y="672" name="inst_FDC79B33" locked="0" code="" scaleX="37" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSaveBlocker" x="-192" y="-128" name="inst_42567B8E" locked="0" code="" scaleX="37" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSaveBlocker" x="864" y="-192" name="inst_CE35F0A4" locked="0" code="" scaleX="2" scaleY="31" colour="4294967295" rotation="0"/>
     <instance objName="objBigRock" x="400" y="303" name="inst_E8EF39FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkStutter" x="96" y="352" name="inst_5DB6BD7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="atkSpiral" x="128" y="352" name="inst_67EF4FE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

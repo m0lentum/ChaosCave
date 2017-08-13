@@ -47,6 +47,7 @@
     <sprites name="blocks">
       <sprite>sprites\sprBlockMask</sprite>
       <sprite>sprites\sprMiniBlockMask</sprite>
+      <sprite>sprites\sprSaveBlocker</sprite>
     </sprites>
     <sprites name="killers">
       <sprite>sprites\sprSpikeRightGlow</sprite>

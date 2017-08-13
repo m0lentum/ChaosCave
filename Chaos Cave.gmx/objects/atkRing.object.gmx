@@ -124,6 +124,10 @@ if (running)
             ds_list_add(outerRing, rock);
         }
     }
+    else if (counter == 300)
+    {
+        with (objRock) instance_destroy(); //make sure all rocks from previous attack have been destroyed
+    }
     
     if (counter &lt; 200)
     {

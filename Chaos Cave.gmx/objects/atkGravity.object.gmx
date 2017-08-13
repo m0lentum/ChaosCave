@@ -99,7 +99,9 @@ if (running)
             pointsX[4] = room_width/2 + other.laserDir*195; pointsY[4] = room_height - 32;
         }
         
-        //shotInterval = 3;
+        
+        with (objStoneBullet) instance_destroy();
+        with (objStoneBulletP) instance_destroy();  //make sure all bullets from previous attacks have been destroyed
     }
     else if (global.avTimer == 4120) //start the first laser
     {
