@@ -29,6 +29,7 @@
 fillColor = c_white;
 outlineColor = c_black;
 alpha = 1;
+align = fa_center;
 
 lifetime = -1;
 fade = 0.05;
@@ -86,6 +87,7 @@ if (isFading)
           <argument>
             <kind>1</kind>
             <string>draw_set_alpha(alpha);
+draw_set_halign(align);
 scrDrawTextOutline(x, y, text, fillColor, outlineColor);
 draw_set_alpha(1);
 </string>
